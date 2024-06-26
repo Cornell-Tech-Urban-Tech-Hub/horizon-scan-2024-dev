@@ -1,0 +1,45 @@
+query {
+  forecasts: allAirtable(filter: { table: { eq: "Forecasts" } }) {
+    nodes {
+      recordId
+      data {
+        Name
+        Summary
+        Description {
+          childMarkdownRemark {
+            rawMarkdownBody
+          }
+        }
+      }
+    }
+  }
+  trends: allAirtable(filter: { table: { eq: "Trends" } }) {
+    nodes {
+      recordId
+      data {
+        Name
+        Summary
+        Description {
+          childMarkdownRemark {
+            rawMarkdownBody
+          }
+        }
+      }
+    }
+  }
+  signals: allAirtable(filter: { table: { eq: "Signals" } }) {
+    nodes {
+      recordId
+      data {
+        Name
+        Description {
+          childMarkdownRemark {
+            rawMarkdownBody
+          }
+        }
+        Sector
+        Tags
+      }
+    }
+  }
+}
