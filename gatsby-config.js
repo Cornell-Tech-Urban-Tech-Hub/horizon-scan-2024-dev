@@ -66,7 +66,7 @@ module.exports = {
             tableName: "Signals",
             tableLinks: ["Informs_Trends"],
             mapping: { Image: `fileNode`, Description: `text/markdown` },
-            tableView: "Everything, Everywhere, All at Once",
+            tableView: "All Signals",
             //tableView: "Published Signals",
           },
           {
@@ -82,7 +82,7 @@ module.exports = {
             tableName: "Forecasts",
             mapping: { Image: `fileNode`, Description: `text/markdown` },
             tableLinks: ["Impacts", "Trends"],
-            tableView: "7. Refine Forecasts",
+            tableView: "All Forecasts",
           },
           // {
           //   baseId: "appMZ894krIdPpZdm",
