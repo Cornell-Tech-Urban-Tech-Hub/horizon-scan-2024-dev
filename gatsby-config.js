@@ -66,7 +66,7 @@ module.exports = {
             tableName: "Signals",
             tableLinks: ["Informs_Trends"],
             mapping: { Image: `fileNode`, Description: `text/markdown` },
-            tableView: "All Signals",
+            tableView: "Published Signals",
             //tableView: "Published Signals",
           },
           {
@@ -74,7 +74,7 @@ module.exports = {
             tableName: "Trends",
             mapping: { Image: `fileNode`, Description: `text/markdown` },
             tableLinks: ["Signals", "Informs_Forecasts"],
-            tableView: "All Trends",
+            tableView: "Published Trends",
             //tableView: "Published Trends",
           },
           {
