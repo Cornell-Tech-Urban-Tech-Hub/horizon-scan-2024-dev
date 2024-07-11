@@ -4,8 +4,8 @@ ref: landing
 link_text: Learn More
 ---
 
-Intro Text (page-landing.md)
+Cities face a fast-escalating climate crisis. The impacts of extreme heat, storms, flooding, and sea level rise are growing fast. At the same time, innovations in artificial intelligence (AI) are improving risk models, making infrastructure more resilient, and empowering grassroots mobilization.
 
-Lores mumps dolor sit mate, nominal id xiv. Dec ore offend it man re, est no dolor es explicate, re dicta elect ram demo critic duo. Que mundane dissents ed ea, est virus ab torrent ad, en sea momentum patriot. Erato dolor em omit tam quo no, per leg ere argument um re. Romanesque acclimates investiture.
+This horizon scan is a handbook of anticipated discoveries and innovations that will deliver intelligence for urban climate adaptation over the decade ahead.
 
 This site includes AI-generated content. Please [report](https://airtable.com/appsMLBagRr31sgJ5/pagsah7NJjVZSeFjb/form) errors, omissions, and hallucinations. 
