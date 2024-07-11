@@ -6,7 +6,7 @@ ref: about-page
 
 _UPDATE TEXT_
 
-The Future of Urban Tech is an ongoing effort initiated in 2020-1 by the Urban Tech Hub of the Jacobs Technion-Cornell Institute at Cornell Tech. The purpose of this project is to provide a curated body of knowledge on anticipated scientific discoveries and applied technology innovations of interest to urban engineers.
+Intelligence for Climate Adaptation is an ongoing effort initiated in 2020-1 by the Urban Tech Hub of the Jacobs Technion-Cornell Institute at Cornell Tech. The purpose of this project is to provide a curated body of knowledge on anticipated scientific discoveries and applied technology innovations of interest to urban engineers.
 
 ## Team
 
@@ -26,4 +26,4 @@ urbantech@cornell.edu
 
 ### Horizon Scan
 
-The Future of Urban Tech: A Ten-Year Horizon Scan. Urban Tech Hub, Jacobs Technion-Cornell Institute, Cornell Tech, September 1, 2021. https://futureofurbantech.org/.
+Intelligence for Climate Adaptation: The Future of Urban AI. Urban Tech Hub, Jacobs Technion-Cornell Institute, Cornell Tech, November 19, 2024. https://intelligence4adaptation.org/.
