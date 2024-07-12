@@ -166,8 +166,9 @@ const Footer = ({ siteMetadata, location }) => {
             <Row>
               <Column className="copyright">
                 <p>Version: {siteMetadata.version}</p>
-                &copy; {new Date().getFullYear()} Cornell Tech. All right
-                reserved.
+                &copy; {new Date().getFullYear()} Cornell Tech. All rights
+                reserved. This site includes AI-generated content. 
+                This site includes AI-generated content. Please <a href="https://airtable.com/appsMLBagRr31sgJ5pagsah7NJjVZSeFjb/form">report</a> errors, omissions, and hallucinations.
               </Column>
             </Row>
           </InnerGrid>
