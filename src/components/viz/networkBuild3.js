@@ -127,7 +127,7 @@ export function NetworkBuild3({
 
   const nodeBaseRadius = {
     forecast: 36,
-    trend: 18,
+    trend: 1,
     signal: 6,
   }
 
@@ -254,7 +254,7 @@ export function NetworkBuild3({
         d3
           .forceLink(links)
           .id(d => d.id)
-          .strength(0.1)
+          .strength(0.5)
       )
       .force("charge", d3.forceManyBody().strength(-12))
       // .force("center", d3.forceCenter(innerWidth / 2, innerHeight / 2))
