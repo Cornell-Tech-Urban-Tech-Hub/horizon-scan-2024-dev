@@ -648,9 +648,9 @@ export function NetworkBuild3({
 
     simulation.force("link").strength(d => {
       if (selectedX === "none" && selectedY === "none") {
-        return 0.9
+        return 0.75
       } else {
-        return 0.5
+        return 0.25
       }
     })
 
