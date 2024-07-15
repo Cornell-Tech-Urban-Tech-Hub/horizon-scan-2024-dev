@@ -127,7 +127,7 @@ export function NetworkBuild3({
 
   const nodeBaseRadius = {
     forecast: 36,
-    trend: 1,
+    trend: 12,
     signal: 6,
   }
 
