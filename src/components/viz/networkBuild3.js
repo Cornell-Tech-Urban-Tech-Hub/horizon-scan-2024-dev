@@ -254,7 +254,7 @@ export function NetworkBuild3({
         d3
           .forceLink(links)
           .id(d => d.id)
-          .strength(0.5)
+          .strength(0.1)
       )
       .force("charge", d3.forceManyBody().strength(-12))
       // .force("center", d3.forceCenter(innerWidth / 2, innerHeight / 2))
@@ -648,9 +648,9 @@ export function NetworkBuild3({
 
     simulation.force("link").strength(d => {
       if (selectedX === "none" && selectedY === "none") {
-        return 0.75
+        return 0.9
       } else {
-        return 0.25
+        return 0.5
       }
     })
 
