@@ -89,7 +89,7 @@ export const query = graphql`
         }
         Sector
         Tags
-        # Signal_Source_URL
+        Signal_Source_URL
         Informs_Trends {
           recordId
           data {
