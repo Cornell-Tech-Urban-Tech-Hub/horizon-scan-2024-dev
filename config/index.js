@@ -4,7 +4,7 @@ module.exports = {
   siteTitle: "Intelligence for Climate Adaptation",
   siteShortTitle: "The Future of Urban AI",
   siteDescription: "The Future of Urban AI",
-  // siteUrl: "http://intelligence4adaptation.org/",
+  // siteUrl: "http://futureofurbanai.org/",
   // siteLanguage: "en_US",
   siteIcon: "src/assets/favicon.png", // Relative to gatsby-config file
   // seoTitleSuffix: "Portfolio Minimal", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
