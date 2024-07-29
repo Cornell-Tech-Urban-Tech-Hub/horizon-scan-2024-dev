@@ -180,7 +180,7 @@ export const query = graphql`
               Name
               Visibility
               Summary
-              STEEP
+              # STEEP
               Time_Frame
               Certainty
               Impact
@@ -215,7 +215,7 @@ export const query = graphql`
         data {
           Name
           Summary
-          STEEP
+          # STEEP
           Time_Frame
           Certainty
           Impact
