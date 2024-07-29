@@ -221,16 +221,16 @@ export const query = graphql`
                 # Sector_linked
               }
             }
-            # Image {
-            #   localFiles {
-            #     childImageSharp {
-            #       # fluid(maxWidth: 500) {
-            #       #   ...GatsbyImageSharpFluid
-            #       # }
-            #       gatsbyImageData(sizes: "500", placeholder: BLURRED)
-            #     }
-            #   }
-            # }
+            Image {
+              localFiles {
+                childImageSharp {
+                  # fluid(maxWidth: 500) {
+                  #   ...GatsbyImageSharpFluid
+                  # }
+                  gatsbyImageData(sizes: "500", placeholder: BLURRED)
+                }
+              }
+            }
           }
         }
         # Impacts {
@@ -259,19 +259,19 @@ export const query = graphql`
         #     Image_Credit
         #   }
         # }
-        # Image {
-        #   localFiles {
-        #     childImageSharp {
-        #       # fluid(maxWidth: 1000) {
-        #       #   ...GatsbyImageSharpFluid
-        #       # }
-        #       gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-        #     }
-        #   }
-        # }
-        # Image_Alt_Description
-        # Image_Source_URL
-        # Image_Credit
+        Image {
+          localFiles {
+            childImageSharp {
+              # fluid(maxWidth: 1000) {
+              #   ...GatsbyImageSharpFluid
+              # }
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+        }
+        Image_Alt_Description
+        Image_Source_URL
+        Image_Credit
       }
     }
     markdown: allMarkdownRemark(

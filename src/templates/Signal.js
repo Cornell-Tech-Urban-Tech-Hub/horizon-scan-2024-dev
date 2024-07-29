@@ -102,19 +102,19 @@ export const query = graphql`
             }
           }
         }
-        # Image {
-        #   localFiles {
-        #     childImageSharp {
-        #       # fluid(maxWidth: 1000) {
-        #       #   ...GatsbyImageSharpFluid
-        #       # }
-        #       gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-        #     }
-        #   }
-        # }
-        # Image_Alt_Description
-        # Image_Source_URL
-        # Image_Credit
+        Image {
+          localFiles {
+            childImageSharp {
+              # fluid(maxWidth: 1000) {
+              #   ...GatsbyImageSharpFluid
+              # }
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+        }
+        Image_Alt_Description
+        Image_Source_URL
+        Image_Credit
       }
       recordId
     }
