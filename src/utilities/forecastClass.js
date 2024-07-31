@@ -23,6 +23,18 @@ const forecastClass = {
     class: "wild_well",
     hex: "#89BC71",
   },
-}
+  "Expansive Views": {
+    class: "expansive_views",
+    hex: "#89BC71",
+  },
+  "Optimized Insights": {
+    class: "optimized_insights",
+    hex: "#4DA8EA",
+  },
+  "Amplified Actions": {
+    class: "amplified_actions",
+    hex: "#F5A52D",
+  },
+};
 
-export default forecastClass
+export default forecastClass;

@@ -22,6 +22,9 @@ const theme = {
     wild_well: "#89BC71",
     resilient: "#4DA8EA",
     urban_innovation: "#CC7FD8",
+    expansive_views: "#89BC71",
+    optimized_insights: "#4DA8EA",
+    amplified_actions: "#F5A52D",
   },
   type: {
     sans: `"din-2014", sans-serif`,
@@ -44,6 +47,6 @@ const theme = {
     laptopL: 1440,
     desktop: 2560,
   },
-}
+};
 
-export default theme
+export default theme;
