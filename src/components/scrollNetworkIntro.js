@@ -1,16 +1,16 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 // import * as d3 from "d3"
 // import { Link } from "gatsby"
-import styled from "styled-components"
+import styled from "styled-components";
 // import Markdown from "markdown-to-jsx"
-import { Waypoint } from "react-waypoint"
-import { NetworkBuild3 } from "./viz/networkBuild3"
-import { processFullNetwork } from "./viz/processNetwork3"
-import { NetworkTagFilters } from "../components/viz/networkTagFilters"
-import { lighten } from "polished"
-import { above } from "../styles/utilities/breakpoints"
+import { Waypoint } from "react-waypoint";
+import { NetworkBuild3 } from "../components/viz/networkBuild3";
+import { processFullNetwork } from "../components/viz/processNetworkV4";
+import { NetworkTagFilters } from "../components/viz/networkTagFilters";
+import { lighten } from "polished";
+import { above } from "../styles/utilities/breakpoints";
 
-import stickybits from "stickybits"
+// import stickybits from "stickybits";
 
 const WaypointWrapper = styled.div`
   .graphic {
@@ -71,7 +71,7 @@ const WaypointWrapper = styled.div`
       flex-direction: row;
     }
   } */
-`
+`;
 
 const WaypointContent = styled.div`
   padding: 1rem;
@@ -108,35 +108,35 @@ const WaypointContent = styled.div`
   &.active {
     /* color: inherit; */
     h2 {
-      /* color: ${props => props.theme.colors.red}; */
+      /* color: ${(props) => props.theme.colors.red}; */
     }
 
     .supercharged {
-      background-color: ${props =>
+      background-color: ${(props) =>
         lighten(0.2, props.theme.forecast.supercharged)};
     }
     .dark-plans {
-      background-color: ${props =>
+      background-color: ${(props) =>
         lighten(0.2, props.theme.forecast.dark_plans)};
     }
     .new-screen {
-      background-color: ${props =>
+      background-color: ${(props) =>
         lighten(0.2, props.theme.forecast.new_screen)};
     }
     .wild-well {
-      background-color: ${props =>
+      background-color: ${(props) =>
         lighten(0.2, props.theme.forecast.wild_well)};
     }
     .resilient {
-      background-color: ${props =>
+      background-color: ${(props) =>
         lighten(0.2, props.theme.forecast.resilient)};
     }
     .urban-innovation {
-      background-color: ${props =>
+      background-color: ${(props) =>
         lighten(0.2, props.theme.forecast.urban_innovation)};
     }
   }
-`
+`;
 
 export const ScrollNetworkIntro = ({ data, markdownMap }) => {
   // const [selectedVizMode, setVizMode] = React.useState("trend")
@@ -144,60 +144,60 @@ export const ScrollNetworkIntro = ({ data, markdownMap }) => {
   // console.log("data")
   // console.log(data)
   // let dataset = processNetwork3(data)
-  let dataset = processFullNetwork(data.forecasts.nodes)
+  let dataset = processFullNetwork(data.forecasts.nodes);
 
   // console.log("dataset")
   // console.log(dataset)
 
   // const [selectedNodes, setSelectedNodes] = React.useState([])
-  const [selectedNodeIds, setSelectedNodeIds] = React.useState([])
-  const [highlighting, setHighlighting] = React.useState(false)
+  const [selectedNodeIds, setSelectedNodeIds] = React.useState([]);
+  const [highlighting, setHighlighting] = React.useState(false);
 
   const filterUpdate = React.useCallback((results, selected) => {
     // console.log("NODES UPDATE")
     // setSelectedNodes(results)
-    setSelectedNodeIds(results.map(d => d.id))
-    setHighlighting(selected.sectors.length > 0 || selected.tags.length > 0)
-  }, [])
+    setSelectedNodeIds(results.map((d) => d.id));
+    setHighlighting(selected.sectors.length > 0 || selected.tags.length > 0);
+  }, []);
 
-  const [selectedX, setX] = React.useState("none")
-  const [selectedY, setY] = React.useState("none")
-  const [selectedS, setS] = React.useState("none")
-  const [selectedView, setView] = React.useState("none")
+  const [selectedX, setX] = React.useState("none");
+  const [selectedY, setY] = React.useState("none");
+  const [selectedS, setS] = React.useState("none");
+  const [selectedView, setView] = React.useState("none");
   // const [selectedNodes, setNodes] = React.useState(dataset.nodes)
   // const [selectedLinks, setLinks] = React.useState(dataset.links)
 
-  const [colorForecast, setColorForecast] = React.useState(false)
+  const [colorForecast, setColorForecast] = React.useState(false);
 
-  const [nodeSelection, setNodeSelection] = React.useState("none")
-  const nodeHandleSelection = React.useCallback(node => {
-    setNodeSelection(node.id)
-  }, [])
+  const [nodeSelection, setNodeSelection] = React.useState("none");
+  const nodeHandleSelection = React.useCallback((node) => {
+    setNodeSelection(node.id);
+  }, []);
 
-  const stepUpdate = React.useCallback(view => {
+  const stepUpdate = React.useCallback((view) => {
     //console.log(`Activate: ${view}`)
     // setVizMode(view)
-    setView(view)
+    setView(view);
 
     if (view === "forecasts" || view === "forecaststrends") {
-      setColorForecast(true)
+      setColorForecast(true);
     } else {
-      setColorForecast(false)
+      setColorForecast(false);
     }
 
     if (view === "trends") {
-      setX("timeframe")
-      setY("certainty")
-      setS("impact")
+      setX("timeframe");
+      setY("certainty");
+      setS("impact");
     } else {
-      setX("none")
-      setY("none")
-      setS("none")
+      setX("none");
+      setY("none");
+      setS("none");
     }
-  })
+  });
 
-  let wpTopOffset = "40%"
-  let wpBottomOffset = "40%"
+  let wpTopOffset = "40%";
+  let wpBottomOffset = "40%";
 
   // useEffect(() => {
   //   var trendCountRefs = document.getElementsByClassName("trend-count")
@@ -209,14 +209,14 @@ export const ScrollNetworkIntro = ({ data, markdownMap }) => {
   useEffect(() => {
     // console.log("NUMBERS")
     // console.log(dataset.counts.trends)
-    let trendCountRefs = document.getElementsByClassName("trend-count")
+    let trendCountRefs = document.getElementsByClassName("trend-count");
     for (let i = 0; i < trendCountRefs.length; i++) {
-      trendCountRefs[i].innerHTML = dataset.counts.trends
+      trendCountRefs[i].innerHTML = dataset.counts.trends;
     }
 
-    let sectorCountRefs = document.getElementsByClassName("sector-count")
+    let sectorCountRefs = document.getElementsByClassName("sector-count");
     for (let i = 0; i < trendCountRefs.length; i++) {
-      sectorCountRefs[i].innerHTML = dataset.counts.sectors
+      sectorCountRefs[i].innerHTML = dataset.counts.sectors;
     }
 
     // var signalCountRefs = document.getElementsByClassName("signal-count")
@@ -224,16 +224,16 @@ export const ScrollNetworkIntro = ({ data, markdownMap }) => {
     //   signalCountRefs[i].innerHTML = dataset.counts.signals
     // }
 
-    let totalCountRefs = document.getElementsByClassName("total-count")
+    let totalCountRefs = document.getElementsByClassName("total-count");
     for (let i = 0; i < totalCountRefs.length; i++) {
-      totalCountRefs[i].innerHTML = dataset.counts.total
+      totalCountRefs[i].innerHTML = dataset.counts.total;
     }
 
     // StickyBits Polyfill
     // console.log("stickybits")
     // console.log(stickybits)
-    stickybits(".graphic", { useStickyClasses: true })
-  })
+    // stickybits(".graphic", { useStickyClasses: true });
+  });
 
   return (
     <>
@@ -341,8 +341,8 @@ export const ScrollNetworkIntro = ({ data, markdownMap }) => {
         <div style={{ height: "100px" }}></div>
       </WaypointWrapper>
     </>
-  )
-}
+  );
+};
 
 const WaypointStep = ({
   step,
@@ -351,17 +351,17 @@ const WaypointStep = ({
   bottomOffset,
   children,
 }) => {
-  const [stepActive, setStepActive] = React.useState(false)
+  const [stepActive, setStepActive] = React.useState(false);
 
   // this.ActiveWaypoint_
   const onEnter = () => {
-    setStepActive(true)
-    stepUpdate(step)
-  }
+    setStepActive(true);
+    stepUpdate(step);
+  };
 
   const onLeave = () => {
-    setStepActive(false)
-  }
+    setStepActive(false);
+  };
 
   return (
     <Waypoint
@@ -375,5 +375,5 @@ const WaypointStep = ({
         {children}
       </WaypointContent>
     </Waypoint>
-  )
-}
+  );
+};
