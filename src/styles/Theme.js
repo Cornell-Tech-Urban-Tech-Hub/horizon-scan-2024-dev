@@ -23,7 +23,7 @@ const theme = {
     resilient: "#4DA8EA",
     urban_innovation: "#CC7FD8",
     extended_views: "#4DA8EA",
-    optimized_insights: "#F27A81",
+    optimized_insights: "#CC7FD8",
     amplified_actions: "#F5A52D",
   },
   type: {
