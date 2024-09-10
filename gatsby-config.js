@@ -1,4 +1,9 @@
 require("dotenv").config();
+const fs = require("fs");
+const path = require("path");
+const {
+  localSearchNormalizer,
+} = require("./src/utilities/localSearchNormalizer");
 const {
   author,
   siteTitle,
@@ -46,6 +51,20 @@ module.exports = {
         name: `markdown`,
         path: `${__dirname}/src/content/markdown/`,
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/content/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-csv`,
+      // options: {
+      //   extensions: [`tsv`],
+      //   delimiter: "\t",
+      // },
     },
     {
       resolve: "gatsby-source-airtable",
@@ -107,6 +126,22 @@ module.exports = {
             file: `https://use.typekit.net/${process.env.TYPEKIT_ID}.css`,
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-local-search",
+      options: {
+        name: "pages",
+        // engine: "lunr",
+        engine: "flexsearch",
+        query: fs.readFileSync(
+          path.resolve(__dirname, "src/utilities/localSearchQuery.graphql"),
+          "utf-8"
+        ),
+        ref: "id",
+        index: ["title", "summary", "description", "sectors", "tags"],
+        store: ["title", "type", "summary", "path"],
+        normalizer: ({ data }) => localSearchNormalizer(data),
       },
     },
   ],
