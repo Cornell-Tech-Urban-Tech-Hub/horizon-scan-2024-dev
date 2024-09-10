@@ -1,7 +1,8 @@
-import React from "react"
+import React from "react";
 // import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled from "styled-components";
 //import { below } from "../styles/utilities/breakpoints"
+import { lighten } from "polished";
 
 const StyledButton = styled.button`
   font-family: ${({ theme }) => theme.type.sans};
@@ -25,7 +26,34 @@ const StyledButton = styled.button`
     margin-right: 0.3rem;
     margin-bottom: -0.175rem;
   }
-`
+`;
+
+const StyledButtonGenerator = styled.button`
+  font-family: ${({ theme }) => theme.type.sans};
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem 0.5rem 0;
+  font-weight: 700;
+  border: none;
+  border-radius: ${({ theme }) => theme.layout.borderRadius};
+  text-decoration: none;
+  transition: all 0.5s ease;
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    outline: none;
+    
+    background-color: ${({ theme }) => lighten(0.1, theme.colors.primary)};};
+  }
+  svg {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.3rem;
+    margin-bottom: -0.175rem;
+  }
+`;
 
 const StyledButtonToggleMore = styled(StyledButton)`
   position: relative;
@@ -76,11 +104,15 @@ const StyledButtonToggleMore = styled(StyledButton)`
       }
     }
   }
-`
+`;
 
 export const Button = ({ onClick, children }) => (
   <StyledButton onClick={onClick}>{children}</StyledButton>
-)
+);
+
+export const ButtonGenerator = ({ onClick, children }) => (
+  <StyledButtonGenerator onClick={onClick}>{children}</StyledButtonGenerator>
+);
 
 export const ButtonMore = ({
   onClick,
@@ -93,7 +125,7 @@ export const ButtonMore = ({
     {isExpanded ? closeText : openText}
     <span className={`arrow  ${isExpanded ? "close" : "open"}`} />
   </StyledButtonToggleMore>
-)
+);
 
 // Button.propTypes = {
 //   onClick: PropTypes.func,
