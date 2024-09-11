@@ -214,7 +214,7 @@ export const InsightCard = ({ result }) => {
                 <h3>{insight.title}</h3>
                 <div className="insight-inner">
                   <p>
-                    <strong>Challenges:</strong> {insight.title}
+                    <strong>Challenges:</strong> {insight.challenges}
                   </p>
                   <p>
                     <strong>Innovative Applications:</strong>{" "}
