@@ -27,7 +27,12 @@ query {
       }
     }
   }
-  signals: allAirtable(filter: { table: { eq: "Signals" } }) {
+  signals: allAirtable(
+    filter: {
+      table: { eq: "Signals" }
+      data: { Visibility: { eq: "Published" } }
+    }
+  ) {
     nodes {
       recordId
       data {
