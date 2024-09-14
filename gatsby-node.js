@@ -90,7 +90,12 @@ exports.createPages = ({ graphql, actions }) => {
 
   const signals = graphql(`
     {
-      allAirtable(filter: { table: { eq: "Signals" } }) {
+      allAirtable(
+        filter: {
+          table: { eq: "Signals" }
+          data: { Visibility: { eq: "Published" } }
+        }
+      ) {
         nodes {
           recordId
           data {
