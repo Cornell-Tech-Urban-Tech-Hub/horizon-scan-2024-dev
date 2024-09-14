@@ -151,10 +151,11 @@ const Footer = ({ siteMetadata, location }) => {
               />
               <FooterNav>
                 <Link to="/">Home</Link>
-                {/* <Link to="/introduction">Introduction</Link> */}
+                <Link to="/introduction">Introduction</Link>
                 <Link to="/explorer">Explorer</Link>
                 <Link to="/about">About</Link>
-                {/* <Link to="/search">Search</Link> */}
+                <Link to="/search">Search</Link>
+                <Link to="/search">Incoming Signals</Link>
                 {/* <Link to="/content-index/">Content Index</Link>
                 <Link to="/research-drivers/">Research Drivers</Link> */}
                 <Link to="/privacy">Privacy</Link>
@@ -167,8 +168,12 @@ const Footer = ({ siteMetadata, location }) => {
               <Column className="copyright">
                 <p>Version: {siteMetadata.version}</p>
                 &copy; {new Date().getFullYear()} Cornell Tech. All rights
-                reserved. This site includes AI-generated content. 
-                This site includes AI-generated content. Please <a href="https://airtable.com/appsMLBagRr31sgJ5pagsah7NJjVZSeFjb/form">report</a> errors, omissions, and hallucinations.
+                reserved. This site includes AI-generated content. This site
+                includes AI-generated content. Please{" "}
+                <a href="https://airtable.com/appsMLBagRr31sgJ5pagsah7NJjVZSeFjb/form">
+                  report
+                </a>{" "}
+                errors, omissions, and hallucinations.
               </Column>
             </Row>
           </InnerGrid>
