@@ -103,6 +103,11 @@ module.exports = {
             tableLinks: ["Impacts", "Trends"],
             tableView: "All Forecasts",
           },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: "Signals",
+            tableView: "Incoming Signals",
+          },
           // {
           //   baseId: "appMZ894krIdPpZdm",
           //   tableName: "Content",
