@@ -1,8 +1,30 @@
 {
   "occupations": {
-    "values": ["Urban Planner"]
+    "values": [
+  "Smart City Planner",
+  "Urban Data Scientist",
+  "IoT Systems Architect",
+  "Sustainable Transportation Engineer",
+  "Urban Cybersecurity Specialist",
+  "Digital Urban Designer",
+  "Smart Grid Engineer",
+  "Urban AI Specialist",
+  "Civic Technology Manager",
+  "Urban Robotics Engineer",
+  "Smart Building Systems Integrator",
+  "Urban Blockchain Developer",
+  "Connected Infrastructure Specialist",
+  "Urban Sensor Network Designer",
+  "Smart Waste Management Engineer",
+  "Urban Drone Systems Operator",
+  "Digital Twin Modeler",
+  "Urban Data Privacy Officer",
+  "Smart Water Systems Engineer",
+  "Urban Tech Policy Advisor"
+]
+
   },
   "timeframes": {
-    "values": [2029, 2030, 2031, 2031]
+    "values": [2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
   }
 }
