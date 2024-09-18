@@ -96,7 +96,7 @@ export function NetworkBuild4({
   selectedLayout,
   linksData,
   nodesData,
-  nodeImages = true,
+  nodeImages = false,
   selectedX = "none",
   selectedY = "none",
   selectedS = "none",
@@ -358,7 +358,11 @@ export function NetworkBuild4({
             })
             .attr("fill", (d) => {
               if (nodeImages && d.type === "forecast") {
-                return `url(#image-${d.id})`;
+                if (d.nodeImage) {
+                  return `url(#image-${d.id})`;
+                } else {
+                  return colorSet[d.type];
+                }
               } else {
                 return colorSet[d.type];
               }
@@ -728,13 +732,16 @@ export function NetworkBuild4({
             c = colorSet[d.type];
           }
           if (nodeImages && d.type === "forecast") {
-            c = `url(#image-${d.id})`;
+            if (d.nodeImage) {
+              c = `url(#image-${d.id})`;
+            } else {
+              c = colorSet[d.type];
+            }
           } else if (colorForecast && d.type === "forecast") {
             c = highlighting
               ? colorSet[d.type]
               : theme.forecast[d.forecastClass];
           }
-
           return c;
         });
 
@@ -767,7 +774,11 @@ export function NetworkBuild4({
             c = colorSet[d.type];
           }
           if (nodeImages && d.type === "forecast") {
-            c = `url(#image-${d.id})`;
+            if (d.nodeImage) {
+              c = `url(#image-${d.id})`;
+            } else {
+              c = colorSet[d.type];
+            }
           } else if (colorForecast && d.type === "forecast") {
             c = highlighting
               ? colorSet[d.type]
