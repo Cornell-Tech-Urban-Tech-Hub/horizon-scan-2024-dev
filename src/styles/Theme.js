@@ -4,7 +4,7 @@ const theme = {
     borderRadius: ".5rem",
   },
   colors: {
-    primary: "#00468b", // Signal Blue #00468b
+    primary: "#309975", // Signal Blue #00468b
     alt: "#F3B632", // Taxi
     link: "#0075DB",
     red: "#AA142D", // Cornell Red
@@ -22,7 +22,7 @@ const theme = {
     wild_well: "#89BC71",
     resilient: "#4DA8EA",
     urban_innovation: "#CC7FD8",
-    extended_views: "#4DA8EA",
+    expansive_views: "#4DA8EA",
     optimized_insights: "#CC7FD8",
     amplified_actions: "#F5A52D",
   },
