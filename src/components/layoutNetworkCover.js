@@ -10,7 +10,7 @@ const WaypointWrapper = styled.div`
   .container {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     ${above.md} {
       flex-direction: row;
     }
@@ -34,7 +34,7 @@ const WaypointWrapper = styled.div`
     z-index: 100;
     pointer-events: none;
     ${below.md} {
-      margin-top: -450px;
+      margin-top: -350px;
     }
   }
 
@@ -91,15 +91,11 @@ const WaypointContent = styled.div`
 
   &.active {
   }
-
-  .total-companies {
-    font-weight: bold;
-  }
 `;
 
 const IntroWrapper = styled.div`
   ${below.md} {
-    padding-left: 25%;
+    padding-right: 25%;
   }
 
   .title {
