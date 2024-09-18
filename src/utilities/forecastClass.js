@@ -23,8 +23,8 @@ const forecastClass = {
     class: "wild_well",
     hex: "#89BC71",
   },
-  "Extended Views": {
-    class: "extended_views",
+  "Expansive Views": {
+    class: "expansive_views",
     hex: "#89BC71",
   },
   "Optimized Insights": {
