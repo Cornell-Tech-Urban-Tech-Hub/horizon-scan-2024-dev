@@ -1,8 +1,12 @@
-import styled, { css } from "styled-components"
-import { above, below } from "./utilities/breakpoints"
+import styled, { css } from "styled-components";
+import { above, below } from "./utilities/breakpoints";
 
 // LAYOUT
-export const Section = styled.section``
+export const Section = styled.section``;
+
+export const SectionCrop = styled.section`
+  contain: paint;
+`;
 
 export const Content = styled.div`
   width: 90%;
@@ -11,7 +15,7 @@ export const Content = styled.div`
   /* display: grid; */
   // grid-template-columns: 3fr 1fr;
   // grid-gap: 40px
-`
+`;
 
 export const SectionMeta = styled.div`
   background-color: #fef6ea;
@@ -19,20 +23,20 @@ export const SectionMeta = styled.div`
   padding-bottom: 2rem;
 
   h5 {
-    font-family: ${props => props.theme.type.sans};
+    font-family: ${(props) => props.theme.type.sans};
     font-size: 1rem;
     font-weight: 400;
   }
 
   .categories {
-    font-family: ${props => props.theme.type.sans};
+    font-family: ${(props) => props.theme.type.sans};
   }
-`
+`;
 
 export const PageHeader = styled.header`
   padding-top: 3rem;
   min-height: 150px;
-`
+`;
 
 export const CardGrid = styled.div`
   display: flex;
@@ -45,17 +49,17 @@ export const CardGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
   }
-`
+`;
 
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
   /* margin-bottom: 1rem; */
 
-  ${props => (props.collapse ? below[props.collapse] : below["md"])} {
+  ${(props) => (props.collapse ? below[props.collapse] : below["md"])} {
     flex-direction: column;
   }
-`
+`;
 
 // ${({ active }) => active && `
 // background: blue;
@@ -64,21 +68,21 @@ export const Row = styled.div`
 export const RowWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 const ColBase = styled.div`
   position: relative;
   padding-left: 1rem;
   padding-right: 1rem;
   display: flex;
-`
+`;
 
 export const Col = styled(ColBase)`
-  flex: ${props => (props.size ? props.size : 1)};
+  flex: ${(props) => (props.size ? props.size : 1)};
   flex-direction: column;
 
   ${below["lg"]} {
-    flex: ${props => (props.size && props.size > 2 ? 2 : 1)};
+    flex: ${(props) => (props.size && props.size > 2 ? 2 : 1)};
   }
 
   ${({ outer }) =>
@@ -89,7 +93,7 @@ export const Col = styled(ColBase)`
     `}
 
   ${({ block }) => block && "width: 100%;"}
-`
+`;
 
 export const ColCard = styled(ColBase)`
   padding-bottom: 2rem;
@@ -101,14 +105,14 @@ export const ColCard = styled(ColBase)`
   ${above.lg} {
     width: 33.3333%;
   }
-`
+`;
 
 export const ColStatement = styled(ColBase)`
   width: 66.6666%;
   ${below.md} {
     width: 100%;
   }
-`
+`;
 
 export const Statement = styled.div`
   display: grid;
@@ -125,7 +129,7 @@ export const Statement = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
-`
+`;
 
 export const IntroGrid = styled.div`
   display: grid;
@@ -143,7 +147,7 @@ export const IntroGrid = styled.div`
     font-size: 1.8rem;
     line-height: 1.2;
   }
-`
+`;
 
 export const CardsIntro = styled.div`
   font-size: 1.2rem;
@@ -153,7 +157,7 @@ export const CardsIntro = styled.div`
   ${below.laptop} {
     padding: 0;
   }
-`
+`;
 
 export const ImageCredit = styled.div`
   font-size: 0.8rem;
@@ -161,13 +165,13 @@ export const ImageCredit = styled.div`
   text-align: right;
   margin: 0.25rem auto;
   color: #777;
-`
+`;
 
 export const ImageCreditInline = styled.div`
   font-size: 0.8rem;
   text-align: left;
   color: #777;
-`
+`;
 
 export const ImageCreditOver = styled.div`
   position: absolute;
@@ -178,4 +182,4 @@ export const ImageCreditOver = styled.div`
   font-size: 0.8rem;
   padding: 0 0.4rem;
   text-align: right;
-`
+`;
