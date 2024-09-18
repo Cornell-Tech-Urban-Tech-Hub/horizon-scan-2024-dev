@@ -3,8 +3,11 @@ import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
 // import { NetworkBuildLanding } from "../components/viz/networkBuildLanding"
-import { NetworkBuild3 } from "../components/viz/networkBuild3";
-import { processNetwork3 } from "../components/viz/processNetworkV4";
+import { NetworkBuild4 } from "../components/viz/networkBuild4-cover";
+import {
+  processNetwork3,
+  processFullNetwork,
+} from "../components/viz/processNetworkV4";
 import styled from "styled-components";
 import { Link } from "gatsby";
 // import * as d3 from "d3"
@@ -12,17 +15,21 @@ import { Link } from "gatsby";
 // import { NetworkTagFilters } from "../components/viz/networkTagFilters"
 // import { NetworkTagList } from "../components/viz/networkTagList"
 // import { summarizeNodeTaxonomy } from "../components/viz/dataUtilities"
-import { Section, Content } from "../styles/StyledElements";
+import { Section, SectionCrop, Content } from "../styles/StyledElements";
 import { below } from "../styles/utilities/breakpoints";
+import cornellLogo from "../assets/vertical-jacobs-cornell-dark.svg";
 
 import { contentMapMarkdown } from "../components/pageUtilities";
 import { SectionCardsLeft } from "../components/cardLayout";
+
+import { LayoutNetworkCover } from "../components/layoutNetworkCover";
 
 const NetworkWrapper = styled.div`
   position: relative;
   z-index: 1;
 `;
 const IntroWrapper = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding-bottom: 2rem;
@@ -72,23 +79,13 @@ const IntroWrapper = styled.div`
     z-index: 100;
     padding: 1rem;
   }
-
-  /* .trigger {
-    border-top: 1px dashed #eee;
-    top: 0;
-    margin-top: 33vh;
-    position: fixed;
-    width: 100%;
-    color: #ccc;
-    z-index: -1000;
-  } */
 `;
 
 export default function Landing({ location, data }) {
   const markdownMap = contentMapMarkdown(data.markdown.nodes);
   const mdNode = markdownMap.get("landing");
   //let dataset = processFullNetwork(data.forecasts.nodes);
-  let dataset = processNetwork3(data);
+  let dataset = processFullNetwork(data.forecasts.nodes);
 
   // console.log("dataset")
   // console.log(dataset)
@@ -96,55 +93,15 @@ export default function Landing({ location, data }) {
   return (
     <Layout>
       {/* <Seo /> */}
-      <Section>
+      <SectionCrop>
         <Content>
-          <IntroWrapper>
-            <div className="title">
-              <h1>{data.site.siteMetadata?.title}</h1>
-              <div className="subtitle">
-                {data.site.siteMetadata?.description}
-              </div>
-            </div>
-            <div className="graphic">
-              <NetworkWrapper>
-                <NetworkBuild3
-                  vizId={"networkViz"}
-                  visContext={"explorer"}
-                  scaling={true}
-                  height={700}
-                  linksData={dataset.links}
-                  nodesData={dataset.nodes}
-                  colorForecast={true}
-                  introTransition={true}
-                  // linksData={selectedLinks}
-                  // nodesData={selectedNodes}
-                  // highlighting={highlighting}
-                  // selectedNodeIds={selectedNodeIds}
-                  // selectedLayout={selectionLayout.value}
-                  // selectedX={selectedX}
-                  // selectedY={selectedY}
-                  // selectedS={selectedS}
-                  // selectedView={selectedView}
-                  // nodeHighlight={selectedSector}
-                  // nodeHoverTooltip={nodeHoverTooltip}
-                  // nodeSelection={nodeSelection}
-                  // nodeHandleSelection={nodeHandleSelection}
-                />
-              </NetworkWrapper>
-            </div>
-            <div className="intro">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: mdNode?.html,
-                }}
-              />
-              <Link to={`/introduction`} title={"Read the Introduction"}>
-                {mdNode?.frontmatter.link_text}
-              </Link>
-            </div>
-          </IntroWrapper>
+          <LayoutNetworkCover
+            site={data.site}
+            dataset={dataset}
+            mdNode={mdNode}
+          />
         </Content>
-      </Section>
+      </SectionCrop>
       <SectionCardsLeft
         nodes={data.forecasts.nodes}
         type={"forecast"}
@@ -180,11 +137,9 @@ export const query = graphql`
               Name
               Visibility
               Summary
-              # STEEP
               Time_Frame
               Certainty
               Impact
-              # Research_Driver
               Signals {
                 recordId
                 data {
@@ -200,6 +155,19 @@ export const query = graphql`
             localFiles {
               childImageSharp {
                 gatsbyImageData(placeholder: BLURRED)
+              }
+            }
+          }
+          NodeImage: Image {
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 200
+                  width: 200
+                  quality: 100
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                )
               }
             }
           }
@@ -234,7 +202,7 @@ export const query = graphql`
     signals: allAirtable(
       filter: {
         table: { eq: "Signals" }
-        # data: { Visibility: { eq: "Published" } }
+        data: { Visibility: { eq: "Published" } }
       }
     ) {
       nodes {
