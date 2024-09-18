@@ -43,19 +43,12 @@ export default function Introduction({ data, location }) {
                 </p>
               </blockquote>
             </Col>
-          </Row>
-          <Row>
             <Col size={2}>
               <div
                 dangerouslySetInnerHTML={{
                   __html: markdownMap.get("intro-urbanization")?.html,
                 }}
               />
-            </Col>
-            <Col>
-              <div>
-                <ChartMass height={400} />
-              </div>
             </Col>
           </Row>
         </Content>
