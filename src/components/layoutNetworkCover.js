@@ -51,6 +51,7 @@ const WaypointWrapper = styled.div`
 
 const NetworkWrapper = styled.div`
   svg {
+    transform: scale(1.4);
     transition: transform 2s;
     width: 100%; // Was breaking IE display
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -59,7 +60,7 @@ const NetworkWrapper = styled.div`
   }
 
   &.cover-mode svg {
-    transform: scale(3);
+    transform: scale(2.4);
     pointer-events: none;
   }
 `;
@@ -233,6 +234,7 @@ export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
               nodesData={dataset.nodes}
               colorForecast={true}
               introTransition={true}
+              nodeImages={true}
               // linksData={selectedLinks}
               // nodesData={selectedNodes}
               // highlighting={highlighting}
