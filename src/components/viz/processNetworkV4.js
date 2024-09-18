@@ -345,6 +345,9 @@ export function processFullNetwork(data) {
       name: forecast.data.Name,
       summary: forecast.data.Summary,
       radius: 18,
+      nodeImage:
+        forecast.data.NodeImage?.localFiles[0].childImageSharp.gatsbyImageData
+          .images.fallback.src,
       forecastClass: forecastClass[forecast.data.Name]?.class,
       sectorsArray: summarizeNodeTaxonomy(forecastNodes, "sectorsArray").map(
         (g) => g.value
