@@ -61,25 +61,6 @@ export default function Trend({ data: { node, markdown } }) {
       <Seo title={`Trend: ${node.data.Name}`} />
       <PageHeader>
         <Breadcrumbs node={node} type={"trend"} />
-        {/* <Breadcrumbs>
-          <Row>
-            <Col size={1}>
-              <div className="content-tag">{`TREND`}</div>
-            </Col>
-            <Col size={1}>
-              <div>Informs Forecast</div>
-              {node.data.Informs_Forecasts?.map(node => (
-                <div key={node.recordId}>
-                  <Link to={`/forecasts/${node.recordId}`}>
-                    <strong>{node.data.Name}</strong>
-                  </Link>
-                </div>
-              ))}
-            </Col>
-            <Col size={1}></Col>
-          </Row>
-        </Breadcrumbs> */}
-
         <PageImageHeader node={node} />
       </PageHeader>
       <Section>
@@ -108,96 +89,8 @@ export default function Trend({ data: { node, markdown } }) {
               )}
             </Col>
           </Row>
-          {/* <IntroGrid>
-            <blockquote>{airtable.data.Summary}</blockquote>
-            {airtable.data.Description && (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: airtable.data.Description.childMarkdownRemark.html,
-                }}
-              />
-            )}
-          </IntroGrid> */}
         </Content>
       </Section>
-      {/* <SectionMeta>
-        <Content>
-          <Row>
-            <Col size={1}>
-              <div className="chart">
-                <h5>[Optional Title]</h5>
-                <ChartTrend trend={airtable.data} />
-              </div>
-            </Col>
-            <Col size={2} className="details">
-              <div>
-                Steep: <strong>{airtable.data.STEEP}</strong>
-              </div>
-              <h5>Trend Traits</h5>
-              <div className="categories">
-                <ul>
-                  <li>
-                    Certainty: <strong>{airtable.data.Certainty}</strong>
-                  </li>
-                  <li>
-                    Time Frame: <strong>{airtable.data.Time_Frame}</strong>
-                  </li>
-                  <li>
-                    Impact: <strong>{airtable.data.Impact}</strong>
-                  </li>
-                  <li>
-            Research Driver:&nbsp;
-            <strong>{airtable.data.Research_Driver?.join(", ")}</strong>
-          </li>
-                </ul>
-              </div>
-              <div className="tags">
-                <Tabs>
-                  <Tab title="Sectors">
-                    <ListTagsCounted array={sectorCounts} type={"sector"} />
-                  </Tab>
-                  <Tab title="Tags">
-                    <ListTagsCounted array={tagCounts} type={"tags"} />
-                  </Tab>
-                </Tabs>
-              </div>
-              <div className="informs">
-                <h5>Informs Forecast</h5>
-                {airtable.data.Informs_Forecasts?.map(node => (
-                  <div key={node.recordId}>
-                    <Link to={`/forecasts/${node.recordId}`}>
-                      <strong>{node.data.Name}</strong>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </Col>
-          </Row>
-        </Content>
-      </SectionMeta> */}
-      {/* <Section>
-        <Content>
-          <h2 className="divider-center">
-            <em>Signals</em>
-          </h2>
-
-          <CardsIntro
-            className="center"
-            dangerouslySetInnerHTML={{
-              __html: contentMap.get("description_signals")?.data.Content
-                .childMarkdownRemark.html,
-            }}
-          />
-          <CardGrid>
-            {airtable.data.Signals?.filter(
-              signal => signal.data.Visibility === "Published"
-            ).map(signal => (
-              <CardSignal key={signal.recordId} node={signal} />
-            ))}
-          </CardGrid>
-          <CardsExpandable nodes={airtable.data.Signals} />
-        </Content>
-      </Section> */}
       <SectionCardsLeft
         nodes={node.data.Signals}
         type={"signal"}
@@ -252,26 +145,6 @@ export default function Trend({ data: { node, markdown } }) {
                 selectable={true}
                 filterUpdate={filterUpdate}
               />
-              {/* <div className="tags">
-                <Tabs>
-                  <Tab title="Sectors">
-                    <ListTagsCounted array={sectorCounts} type={"sector"} />
-                  </Tab>
-                  <Tab title="Tags">
-                    <ListTagsCounted array={tagCounts} type={"tags"} />
-                  </Tab>
-                </Tabs>
-              </div>
-              <div className="informs">
-                <h5>Informs Forecast</h5>
-                {node.data.Informs_Forecasts?.map(node => (
-                  <div key={node.recordId}>
-                    <Link to={`/forecasts/${node.recordId}`}>
-                      <strong>{node.data.Name}</strong>
-                    </Link>
-                  </div>
-                ))}
-              </div> */}
             </Col>
           </Row>
         </Content>
@@ -302,13 +175,13 @@ export const query = graphql`
           data {
             Name
             Visibility
-            Description {
-              childMarkdownRemark {
-                rawMarkdownBody
-                html
-              }
-            }
-            # Signal_Source_URL
+            # Description {
+            #   childMarkdownRemark {
+            #     rawMarkdownBody
+            #     html
+            #   }
+            # }
+            Signal_Source_URL
             Sector
             Tags
             Image {
