@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import { normalize } from "polished"
+import { createGlobalStyle } from "styled-components";
+import { normalize } from "polished";
 // import { above, below } from "./utilities/breakpoints"
 
 const GlobalStyles = createGlobalStyle`
@@ -15,7 +15,7 @@ html {
 }
 
 a:link, a:visited {
-  color: ${props => props.theme.colors.link};
+  color: ${(props) => props.theme.colors.link};
 }
 
 strong {
@@ -41,5 +41,5 @@ strong {
    z-index: 0; 
 }
 
-`
-export default GlobalStyles
+`;
+export default GlobalStyles;
