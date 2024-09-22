@@ -37,11 +37,11 @@ query {
       recordId
       data {
         Name
-        Description {
-          childMarkdownRemark {
-            rawMarkdownBody
-          }
-        }
+        # Description {
+        #   childMarkdownRemark {
+        #     rawMarkdownBody
+        #   }
+        # }
         Sector
         Tags
       }

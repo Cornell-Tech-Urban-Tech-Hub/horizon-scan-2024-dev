@@ -1,8 +1,8 @@
-const { slugFormat } = require("./slugFormat")
+const { slugFormat } = require("./slugFormat");
 
-const localSearchNormalizer = data => {
-  let items = []
-  data.forecasts.nodes.forEach(node => {
+const localSearchNormalizer = (data) => {
+  let items = [];
+  data.forecasts.nodes.forEach((node) => {
     items.push({
       id: node.recordId,
       type: "Forecast",
@@ -10,9 +10,9 @@ const localSearchNormalizer = data => {
       title: node.data.Name,
       summary: node.data.Summary,
       description: node.data.Description.rawMarkdownBody,
-    })
-  })
-  data.trends.nodes.forEach(node => {
+    });
+  });
+  data.trends.nodes.forEach((node) => {
     items.push({
       id: node.recordId,
       type: "Trend",
@@ -20,20 +20,20 @@ const localSearchNormalizer = data => {
       title: node.data.Name,
       summary: node.data.Summary,
       description: node.data.Description.rawMarkdownBody,
-    })
-  })
-  data.signals.nodes.forEach(node => {
+    });
+  });
+  data.signals.nodes.forEach((node) => {
     items.push({
       id: node.recordId,
       path: `/signals/${slugFormat(node.data.Name)}`,
       type: "Signal",
       title: node.data.Name,
-      description: node.data.Description.rawMarkdownBody,
+      // description: node.data.Description.rawMarkdownBody,
       sectors: node.data.Sector !== null ? node.data.Sector.join(" ") : "",
       tags: node.data.Tags !== null ? node.data.Tags.join(" ") : "",
-    })
-  })
-  return items
-}
+    });
+  });
+  return items;
+};
 
-module.exports = { localSearchNormalizer }
+module.exports = { localSearchNormalizer };
