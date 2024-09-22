@@ -11,7 +11,6 @@ import {
 } from "../styles/StyledElements";
 import { ScrollNetworkIntro } from "../components/scrollNetworkIntro";
 import { contentMapMarkdown } from "../components/pageUtilities";
-import { ChartMass } from "../components/viz/chartMass";
 
 import { ImageGrid } from "../components/imageGrid";
 import { SectionCardsLeft } from "../components/cardLayout";
