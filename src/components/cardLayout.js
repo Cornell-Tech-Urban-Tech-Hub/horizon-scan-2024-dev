@@ -9,7 +9,13 @@ import { below } from "../styles/utilities/breakpoints";
 // import { ListTagsSmall, ListTagsCard } from "./listTags"
 import { Content, Row, RowWrap, Col, ColCard } from "../styles/StyledElements";
 import { ButtonMore } from "./button";
-import { CardTrend2, CardSignal2, CardImpact, CardForecast } from "./cards";
+import {
+  CardTrend2,
+  CardSignal2,
+  CardSignal3,
+  CardImpact,
+  CardForecast,
+} from "./cards";
 import { lighten } from "polished";
 
 const SectionCards = styled.div`
@@ -85,8 +91,8 @@ export const CardsExpandable = ({ nodes, expanded = false, type }) => {
               className="collapse-button"
               onClick={() => setIsExpanded(!isExpanded)}
               isExpanded={isExpanded}
-              openText={"Show Descriptions"}
-              closeText={"Hide Description"}
+              openText={"Show Details"}
+              closeText={"Hide Details"}
             />
           </div>
         </Col>
@@ -99,7 +105,7 @@ export const CardsExpandable = ({ nodes, expanded = false, type }) => {
               <CardTrend2 node={node} expanded={isExpanded} />
             )}
             {type === "signal" && (
-              <CardSignal2 node={node} expanded={isExpanded} />
+              <CardSignal3 node={node} expanded={isExpanded} />
             )}
           </ColCard>
         ))}
