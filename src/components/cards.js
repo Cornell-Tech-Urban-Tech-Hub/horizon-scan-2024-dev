@@ -290,6 +290,45 @@ export const CardSignal2 = ({ node, expanded }) => {
   );
 };
 
+// Card Signal No Description
+export const CardSignal3 = ({ node, expanded }) => {
+  //let nodePath = `/trends/${node.recordId}`
+  let nodePath = `/signals/${slugFormat(node.data.Name)}`;
+  const readmore = node.data.Description;
+  let url = node.data.Signal_Source_URL;
+
+  return (
+    <StyledCard className="full">
+      <Link to={nodePath} className="card-inner card-link">
+        <div className="card-header">
+          <CardImage node={node} />
+          <h3>
+            <span>{node.data.Name}</span>
+          </h3>
+        </div>
+        {expanded && readmore && (
+          <div className="card-content">
+            <div className="card-tags">
+              <ListTagsSmall array={node.data.Sector} type="Sector" />
+              <ListTagsSmall array={node.data.Tags} type="Tags" />
+            </div>
+            {/* <div className={"card-description"}>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: readmore.childMarkdownRemark.html,
+                }}
+              />
+            </div> */}
+            <div className="card-link">
+              <SourceLink url={node.data.Signal_Source_URL} />
+            </div>
+          </div>
+        )}
+      </Link>
+    </StyledCard>
+  );
+};
+
 export const CardImpact = ({ node }) => {
   // const image = getImage(node.data.Image?.localFiles[0])
   return (
