@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import { above, below } from "./utilities/breakpoints"
+import { createGlobalStyle } from "styled-components";
+import { above, below } from "./utilities/breakpoints";
 
 // import font from '../assets/fonts/frenchfries.woff';
 
@@ -76,8 +76,11 @@ const Typography = createGlobalStyle`
   }
 
 
+  .content-note {
+    font-style: italic;
+    color: #777;
+}
 
+`;
 
-`
-
-export default Typography
+export default Typography;
