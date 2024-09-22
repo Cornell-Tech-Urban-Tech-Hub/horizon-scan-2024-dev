@@ -60,14 +60,14 @@ const NetworkWrapper = styled.div`
   }
 
   &.cover-mode svg {
-    transform: scale(2.4);
+    transform: scale(2.2);
     pointer-events: none;
   }
 `;
 
 const WaypointContent = styled.div`
   padding: 1rem;
-  margin-bottom: 70vh;
+  margin-bottom: 40vh;
   pointer-events: all;
 
   &.step-standard {
@@ -256,7 +256,7 @@ export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
           </HeaderLogo>
         </div>
       </div>
-      <div style={{ height: "100px" }}></div>
+      {/* <div style={{ height: "100px" }}></div> */}
     </WaypointWrapper>
   );
 };
