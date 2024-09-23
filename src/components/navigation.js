@@ -288,7 +288,7 @@ const Navigation = ({ siteMetadata, open = false }) => {
         <NavMenuContent>
           <Row collapse={"md"}>
             <Col size={1}>
-              {/* <Link
+              <Link
                 onClick={() => setIsNavOpen(!isNavOpen)}
                 activeClassName="active-link"
                 // onClick={e => handleNavClick}
@@ -296,7 +296,7 @@ const Navigation = ({ siteMetadata, open = false }) => {
                 to="/introduction"
               >
                 Read the <span>introduction</span>
-              </Link> */}
+              </Link>
               <Link
                 onClick={() => setIsNavOpen(!isNavOpen)}
                 activeClassName="active-link"
