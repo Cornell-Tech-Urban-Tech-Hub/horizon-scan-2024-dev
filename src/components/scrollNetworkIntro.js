@@ -111,17 +111,17 @@ const WaypointContent = styled.div`
       /* color: ${(props) => props.theme.colors.red}; */
     }
 
-    .supercharged {
+    .amplified-actions {
       background-color: ${(props) =>
-        lighten(0.2, props.theme.forecast.supercharged)};
+        lighten(0.2, props.theme.forecast.amplified_actions)};
     }
-    .dark-plans {
+    .optimized-insights {
       background-color: ${(props) =>
-        lighten(0.2, props.theme.forecast.dark_plans)};
+        lighten(0.2, props.theme.forecast.optimized_insights)};
     }
-    .new-screen {
+    .expansive-views {
       background-color: ${(props) =>
-        lighten(0.2, props.theme.forecast.new_screen)};
+        lighten(0.2, props.theme.forecast.expansive_views)};
     }
     .wild-well {
       background-color: ${(props) =>
