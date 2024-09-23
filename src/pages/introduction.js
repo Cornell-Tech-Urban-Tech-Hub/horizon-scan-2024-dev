@@ -193,7 +193,7 @@ export const query = graphql`
       }
     }
     cover: allFile(
-      filter: { relativePath: { eq: "khara-woods-n4Lw7zArIk-unsplash.jpeg" } } # filter: { relativePath: { eq: "Urbanized-01.png" } }
+      filter: { relativePath: { eq: "cash-macanaya-QszCTly9IgQ-unsplash.jpg" } } # filter: { relativePath: { eq: "Urbanized-01.png" } }
     ) {
       nodes {
         childImageSharp {
