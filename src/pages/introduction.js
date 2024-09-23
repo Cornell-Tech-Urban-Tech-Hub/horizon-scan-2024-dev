@@ -30,7 +30,7 @@ export default function Introduction({ data, location }) {
         type="local"
         title={title}
         image={data.cover.nodes[0]}
-        credit={"Credit: Khara Woods on Unsplash"}
+        credit={"Credit: Cash Macanaya on Unsplash"}
       />
       <Section>
         <Content>
