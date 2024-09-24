@@ -92,7 +92,7 @@ export default function Landing({ location, data }) {
 
   return (
     <Layout>
-      {/* <Seo /> */}
+      <Seo />
       <SectionCrop>
         <Content>
           <LayoutNetworkCover
