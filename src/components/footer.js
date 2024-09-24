@@ -169,8 +169,7 @@ const Footer = ({ siteMetadata, location }) => {
               <Column className="copyright">
                 <p>Version: {siteMetadata.version}</p>
                 &copy; {new Date().getFullYear()} Cornell Tech. All rights
-                reserved. This site includes AI-generated content. This site
-                includes AI-generated content. Please{" "}
+                reserved. This site includes AI-generated content. Please{" "}
                 <a href="https://airtable.com/appsMLBagRr31sgJ5pagsah7NJjVZSeFjb/form">
                   report
                 </a>{" "}
