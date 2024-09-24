@@ -52,7 +52,7 @@ export default function Introduction({ data, location }) {
           </Row>
         </Content>
       </Section>
-      <Section>
+      {/* <Section>
         <ImageGrid nodes={data.trendimages.nodes}>
           <blockquote className={"statement"}>
             <p>
@@ -62,7 +62,7 @@ export default function Introduction({ data, location }) {
             </p>
           </blockquote>
         </ImageGrid>
-      </Section>
+      </Section> */}
       <SectionMeta>
         <Content>
           <ScrollNetworkIntro data={data} markdownMap={markdownMap} />
