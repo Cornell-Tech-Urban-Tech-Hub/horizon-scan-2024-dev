@@ -86,8 +86,8 @@ export const InsightPanel = ({ trend, optionsSector }) => {
 
   const [insights, setInsights] = React.useState([]);
 
-  console.log("InsightPanel");
-  console.log(trend);
+  // console.log("InsightPanel");
+  // console.log(trend);
 
   const [loading, setLoading] = React.useState(false);
 
@@ -107,13 +107,13 @@ export const InsightPanel = ({ trend, optionsSector }) => {
       occupation: selectedOccupation,
       timeframe: selectedTimeframe,
     };
-    console.log(`getInsights`);
+    // console.log(`getInsights`);
 
     setLoading(true);
 
     generateInsight(trend.data, settings).then((results) => {
-      console.log("callback");
-      console.log(results);
+      // console.log("callback");
+      // console.log(results);
       results.id = insights.length + 1;
       setInsights([results, ...insights]);
       setLoading(false);
