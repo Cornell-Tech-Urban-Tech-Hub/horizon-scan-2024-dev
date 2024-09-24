@@ -20,9 +20,9 @@ module.exports = {
     description: siteDescription,
     author: author,
     icon: siteIcon, // This path is relative to the root of the site.
-    version: "1.0.0",
+    version: "0.2.0",
     //version: String(process.env.npm_package_version),
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://futureofurbanai.org`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
