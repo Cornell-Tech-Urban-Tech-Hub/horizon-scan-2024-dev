@@ -1,16 +1,17 @@
-import React from "react"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
 import {
   PageHeader,
   Section,
   Content,
   Row,
   Col,
-} from "../styles/StyledElements"
+} from "../styles/StyledElements";
 
 export default function PageNotFound() {
-  const title = "404: Page Not found"
+  const title = "404: Page Not found";
   return (
     <Layout>
       <Seo title={title} />
@@ -27,11 +28,15 @@ export default function PageNotFound() {
         <Content>
           <Row>
             <Col>
-              <p>You just hit a route that doesn&#39;t exist...</p>
+              <p>You just landed on a page that doesn't exist</p>
+              <p>
+                Return <Link to="/">Home</Link> or try the{" "}
+                <Link to="/search">Search</Link>page.
+              </p>
             </Col>
           </Row>
         </Content>
       </Section>
     </Layout>
-  )
+  );
 }
