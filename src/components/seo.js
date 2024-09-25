@@ -64,6 +64,7 @@ function Seo({ description, meta, title }) {
       meta={[
         {
           name: `description`,
+          property: `og:description`,
           content: ogDescription,
         },
         {
@@ -71,17 +72,10 @@ function Seo({ description, meta, title }) {
           content: ogTitle,
         },
         {
-          property: `og:description`,
-          content: ogDescription,
-        },
-        {
           property: `og:type`,
           content: `website`,
         },
-        {
-          property: `og:image`,
-          content: ogImageURL,
-        },
+        { name: "image", property: `og:image`, content: ogImageURL },
         {
           name: `twitter:card`,
           content: `summary`,
