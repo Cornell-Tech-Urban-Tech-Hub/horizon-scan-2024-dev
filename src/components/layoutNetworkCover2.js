@@ -34,7 +34,7 @@ const WaypointWrapper = styled.div`
     z-index: 100;
     pointer-events: none;
     ${below.md} {
-      margin-top: -70vh;
+      margin-top: -450px;
     }
   }
 
@@ -164,7 +164,6 @@ const HeaderLogo = styled.div`
     }
     padding: 10px;
   }
-
   ${below.md} {
     top: 12%;
   }
