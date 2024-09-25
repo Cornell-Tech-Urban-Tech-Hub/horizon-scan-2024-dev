@@ -39,8 +39,8 @@ export default function Landing({ location, data }) {
   let dataset = processNetwork3(data);
   const title = "Insight Generator";
   // console.log("dataset")
-  console.log(dataset);
-  console.log(data.trends.nodes);
+  // console.log(dataset);
+  // console.log(data.trends.nodes);
 
   const optionsSector = dataset.sectorKeys.map((d) => {
     let value = d;
@@ -61,8 +61,8 @@ export default function Landing({ location, data }) {
   function updateSelectedTrend(value) {
     setTrendID(value);
     setTrendNode(dataset.lookup.get(value));
-    console.log("selectedTrendNode");
-    console.log(dataset.lookup.get(value));
+    // console.log("selectedTrendNode");
+    // console.log(dataset.lookup.get(value));
   }
 
   return (

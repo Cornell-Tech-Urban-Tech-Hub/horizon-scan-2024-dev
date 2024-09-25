@@ -99,44 +99,10 @@ export const query = graphql`
 `;
 
 const IncomingList = ({ data }) => {
-  console.log(data);
-  // let forcasts = data.all.nodes.filter((d) => d.table === "Forecasts");
-  // let trends = data.all.nodes.filter((d) => d.table === "Trends");
+  // console.log(data);
   let signals = data.signals;
-
-  console.log(signals);
-  // let impacts = data.all.nodes.filter((d) => d.table === "Impacts");
   return (
     <>
-      {/* <Row>
-        <Col>
-          <h2>Forecasts</h2>
-        </Col>
-      </Row>
-      {forcasts.map((node) => (
-        <NodeRow key={node.recordId} node={node} />
-      ))}
-      <Row>
-        <Col>
-          <h2>Impacts</h2>
-        </Col>
-      </Row>
-      {impacts.map((node) => (
-        <NodeRow key={node.recordId} node={node} />
-      ))}
-      <Row>
-        <Col>
-          <h2>Trends</h2>
-        </Col>
-      </Row>
-      {trends.map((node) => (
-        <NodeRow key={node.recordId} node={node} />
-      ))} */}
-      {/* <Row>
-        <Col>
-          <h2>Signals</h2>
-        </Col>
-      </Row> */}
       {signals.nodes.map((node) => (
         <NodeRow key={node.recordId} node={node} />
       ))}
@@ -147,10 +113,10 @@ const IncomingList = ({ data }) => {
 const NodeRow = ({ node }) => {
   //let nodePath = `/forecasts/${node.recordId}`
   //let nodePath = `/forecasts/${slugFormat(node.data.Name)}`
-  console.log(node);
+  // console.log(node);
   let host = node.data.Signal_Source_URL
     ? getHostName(node.data.Signal_Source_URL)
-    : null; // returns youtube.com
+    : null;
 
   return (
     <StyledNodeRow>

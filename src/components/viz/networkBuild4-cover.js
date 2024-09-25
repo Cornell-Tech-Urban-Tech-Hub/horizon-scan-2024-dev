@@ -154,9 +154,9 @@ export function NetworkBuild4({
 
   let forecasts = nodes.filter((d) => d.type === "forecast");
 
-  console.log("nodes");
-  console.log(forecasts);
-  console.log(nodes);
+  // console.log("nodes");
+  // console.log(forecasts);
+  // console.log(nodes);
 
   // let filterNodes = []
   // let filterLinks = []
@@ -243,7 +243,7 @@ export function NetworkBuild4({
     //   svg.attr("width", width).attr("height", height)
     // }
 
-    console.log("DEFS");
+    // console.log("DEFS");
 
     var defs = svg.append("defs");
 
