@@ -154,30 +154,13 @@ export default function Forecast({ location, data: { node, markdown } }) {
           </CardGrid>
         </Content>
       </Section> */}
-      <SectionCardsLeft
+      {/* <SectionCardsLeft
         nodes={node.data.Impacts}
         type={"impact"}
         heading={markdownMap.get("description-impacts")?.frontmatter.title}
         description={markdownMap.get("description-impacts")}
-      />
+      /> */}
 
-      {/* <Section>
-        <Content>
-          <h2 className="divider-center">Impacts</h2>
-          <CardsIntro
-            dangerouslySetInnerHTML={{
-              __html: contentMap.get("description_impacts")?.data.Content
-                .childMarkdownRemark.html,
-            }}
-          />
-
-          <CardGrid>
-            {airtable.data.Impacts?.map(impact => (
-              <CardImpact key={impact.recordId} node={impact} />
-            ))}
-          </CardGrid>
-        </Content>
-      </Section> */}
       {/* <Section>
         <Content>
           <PageSocialShare location={location} text={node.data.Name} />
