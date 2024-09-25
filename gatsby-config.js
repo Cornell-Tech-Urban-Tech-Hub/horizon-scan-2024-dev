@@ -19,7 +19,7 @@ module.exports = {
     title: siteTitle,
     description: siteDescription,
     author: author,
-    icon: siteIcon, // This path is relative to the root of the site.
+    // icon: siteIcon, // This path is relative to the root of the site.
     version: "0.2.0",
     //version: String(process.env.npm_package_version),
     siteUrl: `https://futureofurbanai.org`,
@@ -114,6 +114,18 @@ module.exports = {
           //   mapping: { Content: `text/markdown` },
           // },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteTitle,
+        short_name: siteShortTitle,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `#00468b`,
+        display: `minimal-ui`,
+        icon: siteIcon, // This path is relative to the root of the site.
       },
     },
     {

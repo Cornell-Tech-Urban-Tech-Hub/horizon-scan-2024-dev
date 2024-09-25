@@ -23,6 +23,7 @@
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-local-search": "^2.0.1",
+    "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-plugin-styled-components": "^6.13.1",
     "gatsby-source-airtable": "^2.4.2",
