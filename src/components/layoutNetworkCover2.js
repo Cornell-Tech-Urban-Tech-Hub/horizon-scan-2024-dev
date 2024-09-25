@@ -34,7 +34,7 @@ const WaypointWrapper = styled.div`
     z-index: 100;
     pointer-events: none;
     ${below.md} {
-      margin-top: -350px;
+      margin-top: -70vh;
     }
   }
 
@@ -68,7 +68,11 @@ const NetworkWrapper = styled.div`
 const WaypointContent = styled.div`
   padding: 1rem;
   margin-bottom: 10vh;
+
   pointer-events: all;
+  ${below.md} {
+    margin-bottom: 70vh;
+  }
 
   &.step-standard {
     background-color: rgba(255, 255, 255, 0.85);
@@ -154,9 +158,15 @@ const HeaderLogo = styled.div`
       visibility: visible;
       opacity: 1;
     }
+    ${below.md} {
+      width: 70px;
+    }
     padding: 10px;
   }
   background-color: #fff;
+  ${below.md} {
+    top: 12%;
+  }
 `;
 
 export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
