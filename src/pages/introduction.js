@@ -65,6 +65,18 @@ export default function Introduction({ data, location }) {
       </Section> */}
       <SectionMeta>
         <Content>
+          <Row>
+            <Col>
+              <blockquote className={"statement"}>
+                <p>
+                  <span>What's a horizon scan?</span>
+                </p>
+              </blockquote>
+              <h2></h2>
+            </Col>
+          </Row>
+        </Content>
+        <Content>
           <ScrollNetworkIntro data={data} markdownMap={markdownMap} />
         </Content>
       </SectionMeta>
