@@ -22,6 +22,7 @@ function Seo({ description, meta, title }) {
           subtitle
           description
           author
+          siteUrl
         }
       }
       ogimage: allFile(filter: { relativePath: { eq: "social-card.png" } }) {
@@ -41,7 +42,7 @@ function Seo({ description, meta, title }) {
   const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 
   const ogTitle = title ? title : siteTitle;
-  const ogImageURL = ogimage.nodes[0].publicURL;
+  const ogImageURL = site.siteMetadata.siteUrl + ogimage.nodes[0].publicURL;
 
   // location.pathname === "/" && console.log("LOCATION IS HOMEPAGE")
   //const pageDescription = description ? description : siteDescription
