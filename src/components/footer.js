@@ -153,7 +153,7 @@ const Footer = ({ siteMetadata, location }) => {
                 <Link to="/">Home</Link>
                 <Link to="/introduction">Introduction</Link>
                 <Link to="/explorer">Explorer</Link>
-                <Link to="/insights">Insight Generator</Link>
+                {/* <Link to="/insights">Insight Generator</Link> */}
                 <Link to="/incoming">Incoming Signals</Link>
                 <Link to="/search">Search</Link>
                 <Link to="/about">About</Link>
