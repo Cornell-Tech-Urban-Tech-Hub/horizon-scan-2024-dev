@@ -8,4 +8,4 @@ Cities face a fast-escalating climate crisis. The impacts of extreme heat, sever
 
 This horizon scan is a handbook of anticipated discoveries, innovations, and developments that will deliver intelligence for urban climate adaptation over the decade ahead.
 
-<!-- Sneak preview: Personalize your horizon scan with our [Insights Generator](https://futureofurbanai.org/insights/). -->
+Sneak preview: Personalize your horizon scan with our [Insights Generator](https://futureofurbanai.org/insights/).
