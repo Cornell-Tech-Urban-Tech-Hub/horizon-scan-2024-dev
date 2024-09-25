@@ -47,6 +47,14 @@ const StyledInsightCard = styled.div`
   }
 `;
 
+const StyledErrorMessage = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Loading = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -80,6 +88,7 @@ export const InsightPanel = ({ trend, optionsSector }) => {
   const [selectedOccupation, setOccupation] = React.useState(
     generatorOptions.occupations.values[0]
   );
+  const [errorMessage, setErrorMessage] = React.useState(null);
   const [selectedTimeframe, setTimeframe] = React.useState(
     generatorOptions.timeframes.values[0]
   );
@@ -114,8 +123,16 @@ export const InsightPanel = ({ trend, optionsSector }) => {
     generateInsight(trend.data, settings).then((results) => {
       // console.log("callback");
       // console.log(results);
-      results.id = insights.length + 1;
-      setInsights([results, ...insights]);
+      if (errorMessage !== null) {
+        setErrorMessage(null);
+      }
+
+      if (results.status === "ok") {
+        results.id = insights.length + 1;
+        setInsights([results, ...insights]);
+      } else {
+        setErrorMessage("Error Accessing Insight Generator");
+      }
       setLoading(false);
     });
 
@@ -182,6 +199,7 @@ export const InsightPanel = ({ trend, optionsSector }) => {
           <LoadingIcon message={"Generating Insights"} />
         </Loading>
       )}
+      {errorMessage && <StyledErrorMessage>{errorMessage}</StyledErrorMessage>}
       {insights.length > 0 && (
         <>
           <InsightCard key={1} result={insights[0]} />

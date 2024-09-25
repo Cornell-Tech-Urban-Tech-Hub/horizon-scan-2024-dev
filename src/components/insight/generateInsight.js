@@ -61,7 +61,7 @@ export async function generateInsight(trend, settings) {
   })
     .then((response) => {
       // 1. check response.ok
-      console.log(response.status, response.statusText);
+      // console.log(response.status, response.statusText);
       let status = response.status;
       result.time = new Date().getTime() - startTime + "ms";
       result.timestamp = new Date()
@@ -71,9 +71,11 @@ export async function generateInsight(trend, settings) {
         .replace("T", " ");
 
       if (response.status !== 200) {
+        result.status = "error";
         return result;
       } else {
         let status = response.status;
+        result.status = "ok";
         return response.json();
       }
     })
@@ -84,7 +86,11 @@ export async function generateInsight(trend, settings) {
 
       return result;
     })
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => {
+      result.status = "error";
+      // console.error("Error:", error); // e.g. Error: TypeError: Failed to fetch
+      return result;
+    });
   // .then((json) => {
   //   // all good, token is ready
   //   console.log(json);
