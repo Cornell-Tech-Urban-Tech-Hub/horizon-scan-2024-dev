@@ -230,7 +230,8 @@ export const InsightCard = ({ result }) => {
         </Row>
         <div className="meta">
           <Col>
-            Request ({result.id}): {result.timestamp} / Time: {result.time}
+            Request ({result.id}): {result.timestamp}
+            {/* / Time: {result.time} */}
             <div>
               Trend: <strong>{trend.title}</strong>
             </div>
