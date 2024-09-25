@@ -34,7 +34,7 @@ const WaypointWrapper = styled.div`
     z-index: 100;
     pointer-events: none;
     ${below.md} {
-      margin-top: -450px;
+      margin-top: -350px;
     }
   }
 
@@ -206,7 +206,7 @@ export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
                 <h1>
                   <span>{site.siteMetadata?.title}</span>
                 </h1>
-                <div className="subtitle">{site.siteMetadata?.description}</div>
+                <div className="subtitle">{site.siteMetadata?.subtitle}</div>
               </div>
             </IntroWrapper>
           </WaypointStep>

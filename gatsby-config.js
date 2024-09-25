@@ -8,6 +8,7 @@ const {
   author,
   siteTitle,
   siteShortTitle,
+  siteSubtitle,
   siteDescription,
   siteIcon,
 } = require(`./config`);
@@ -17,6 +18,7 @@ const {
 module.exports = {
   siteMetadata: {
     title: siteTitle,
+    subtitle: siteSubtitle,
     description: siteDescription,
     author: author,
     // icon: siteIcon, // This path is relative to the root of the site.

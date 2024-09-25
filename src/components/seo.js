@@ -19,6 +19,7 @@ function Seo({ description, meta, title }) {
       site {
         siteMetadata {
           title
+          subtitle
           description
           author
         }
@@ -32,7 +33,8 @@ function Seo({ description, meta, title }) {
   `);
 
   const siteTitle = site.siteMetadata.title;
-  const siteSubtitle = description
+  const siteSubtitle = site.siteMetadata.subtitle;
+  const siteDescription = description
     ? description
     : site.siteMetadata.description;
   const siteFullTitle = `${siteTitle}: ${siteSubtitle}`;
@@ -45,7 +47,7 @@ function Seo({ description, meta, title }) {
   //const pageDescription = description ? description : siteDescription
   const ogDescription =
     location.pathname === "/"
-      ? siteSubtitle
+      ? siteDescription
       : description
         ? description
         : siteFullTitle;

@@ -2,8 +2,10 @@ module.exports = {
   //-- SITE SETTINGS -----
   author: "Urban Tech Hub",
   siteTitle: "Intelligence for Climate Adaptation",
-  siteShortTitle: "The Future of Urban AI",
-  siteDescription: "The Future of Urban AI",
+  siteShortTitle: "Intelligence for Climate Adaptation",
+  siteSubtitle: "The Future of Urban AI",
+  siteDescription:
+    "This horizon scan is a handbook of anticipated discoveries, innovations, and developments that will deliver intelligence for urban climate adaptation over the decade ahead.",
   // siteUrl: "http://futureofurbanai.org/",
   // siteLanguage: "en_US",
   siteIcon: "src/assets/favicon.png", // Relative to gatsby-config file
@@ -12,12 +14,12 @@ module.exports = {
   // googleAnalyticsTrackingId: "G-BBKN5BX852", // e.g. UA-XXXXXX-X
 
   //-- NAVIGATION SETTINGS -----
-  navLinks: {
-    footerLinks: [
-      {
-        name: "Privacy",
-        url: "/privacy",
-      },
-    ],
-  },
+  // navLinks: {
+  //   footerLinks: [
+  //     {
+  //       name: "Privacy",
+  //       url: "/privacy",
+  //     },
+  //   ],
+  // },
 };

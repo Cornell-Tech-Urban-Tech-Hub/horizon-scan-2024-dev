@@ -2,14 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
-// import { NetworkBuildLanding } from "../components/viz/networkBuildLanding"
-import { NetworkBuild4 } from "../components/viz/networkBuild4-cover";
-import {
-  processNetwork3,
-  processFullNetwork,
-} from "../components/viz/processNetworkV4";
+import { processFullNetwork } from "../components/viz/processNetworkV4";
 import styled from "styled-components";
-import { Link } from "gatsby";
 // import * as d3 from "d3"
 // import Select from "react-select"
 // import { NetworkTagFilters } from "../components/viz/networkTagFilters"
@@ -17,7 +11,6 @@ import { Link } from "gatsby";
 // import { summarizeNodeTaxonomy } from "../components/viz/dataUtilities"
 import { Section, SectionCrop, Content } from "../styles/StyledElements";
 import { below } from "../styles/utilities/breakpoints";
-import cornellLogo from "../assets/vertical-jacobs-cornell-dark.svg";
 
 import { contentMapMarkdown } from "../components/pageUtilities";
 import { SectionCardsLeft } from "../components/cardLayout";
@@ -218,6 +211,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        subtitle
         description
       }
     }
