@@ -22,7 +22,7 @@ import cornellLogo from "../assets/vertical-jacobs-cornell-dark.svg";
 import { contentMapMarkdown } from "../components/pageUtilities";
 import { SectionCardsLeft } from "../components/cardLayout";
 
-import { LayoutNetworkCover } from "../components/layoutNetworkCover";
+import { LayoutNetworkCover } from "../components/layoutNetworkCover2";
 
 const NetworkWrapper = styled.div`
   position: relative;

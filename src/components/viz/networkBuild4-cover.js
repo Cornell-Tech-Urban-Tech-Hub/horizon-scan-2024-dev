@@ -379,7 +379,51 @@ export function NetworkBuild4({
         (exit) => exit.remove()
       );
 
-    node.attr("fill", "#000");
+    const nodeLabels = nodeGroup
+      .selectAll(".node-label")
+      .data(forecasts, (d) => d.id)
+      .join(
+        (enter) =>
+          enter
+            .append("g")
+            .attr("class", (d) => `node node-${d.type}`)
+            .attr("id", (d) => `${d.type} - ${d.name}`)
+            .attr("transform", (d) => {
+              // console.log(`x: ${d.x} / y: ${d.y}`)
+              d.x = innerWidth / 2;
+              d.y = innerHeight / 2;
+              // return `translate(${innerWidth / 2}, ${innerHeight / 2})`
+              // return `translate(${d.x}, ${d.y})`
+            })
+            .append("text")
+            .attr("class", "bubble")
+            .attr("opacity", (d) => {
+              return transitionNodes ? 0 : 1;
+            })
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 2)
+            .attr("r", (d) => {
+              d.radius = nodeBaseRadius[d.type];
+              if (selectedS === "impact" && d.type === "trend") {
+                d.radius = scaleS(d.impact);
+              }
+              if (scaling) {
+                if (width < breaks.sm) {
+                  d.radius = d.radius * 0.7;
+                } else if (width <= breaks.md) {
+                  d.radius = d.radius * 0.8;
+                }
+              }
+              return d.radius;
+            }),
+        // update =>
+        //   update
+        //     .attr("transform", function (d) {
+        //       return `translate(${x(d.date)},${y(d[selectType])})`
+        //     })
+        //     .attr("opacity", d => (!isNaN(d[selectType]) ? 1 : 0)), // hide if value is NaN
+        (exit) => exit.remove()
+      );
 
     const linkedByIndex = {};
     links.forEach((d) => {
