@@ -154,6 +154,7 @@ const HeaderLogo = styled.div`
     z-index: 4000;
     opacity: 0;
     transition: all 0.5s linear;
+    background-color: #fff;
     &.cover-mode {
       visibility: visible;
       opacity: 1;
@@ -163,7 +164,7 @@ const HeaderLogo = styled.div`
     }
     padding: 10px;
   }
-  background-color: #fff;
+
   ${below.md} {
     top: 12%;
   }
