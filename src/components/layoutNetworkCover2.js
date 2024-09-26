@@ -139,6 +139,19 @@ const IntroWrapper = styled.div`
       box-shadow:
         10px 0 0 white,
         -10px 0 0 white;
+      // margin-bottom: 2rem;
+    }
+
+    .preview {
+      font-family: ${({ theme }) => theme.type.sans};
+      display: inline-block;
+      font-size: 1.1rem;
+      color: #999;
+      font-style: italic;
+      background-color: white;
+      box-shadow:
+        10px 0 0 white,
+        -10px 0 0 white;
       margin-bottom: 2rem;
     }
   }
@@ -207,6 +220,8 @@ export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
                   <span>{site.siteMetadata?.title}</span>
                 </h1>
                 <div className="subtitle">{site.siteMetadata?.subtitle}</div>
+                <br />
+                <div className="preview">{"A Preview"}</div>
               </div>
             </IntroWrapper>
           </WaypointStep>
