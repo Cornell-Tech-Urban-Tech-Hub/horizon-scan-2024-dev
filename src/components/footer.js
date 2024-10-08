@@ -6,10 +6,8 @@ import { useStaticQuery, graphql } from "gatsby";
 // import { node } from "prop-types"
 
 import cornellLogo from "../assets/vertical-jacobs-cornell.svg";
-
-import { below } from "../styles/utilities/breakpoints";
-
-// import logo from "../images/gatsby-icon.png"
+import urbanaiLogo from "../assets/URBAN-AI-Logo-Blanc.png";
+import { above, below } from "../styles/utilities/breakpoints";
 
 const Row = styled.footer`
   display: flex;
@@ -52,17 +50,45 @@ const OuterGrid = styled.div`
   gap: 2rem; */
 `;
 
-const FooterLogo = styled.div`
+const FooterLogos = styled.div`
   flex: 1;
+  display: flex;
+  ${below.laptop} {
+    flex-direction: column;
+  }
+  ${above.laptop} {
+    .footer-logo {
+      flex-grow: 1;
+    }
+    .logo-ct {
+      flex: 2;
+    }
+    .logo-uai {
+      flex: 3;
+    }
+  }
+  text-align: center;
   padding-right: 1rem;
-  .logo {
-    width: 90%;
-    max-width: 85px;
+  .footer-logo {
+  }
+  .logo-ct {
+    .logo {
+      width: 70%;
+      max-width: 85px;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .logo-uai .logo {
+    width: 100%;
+    max-width: 110px;
+  }
+  img {
+    margin-right: 10%;
   }
 `;
 
 const InnerGrid = styled.div`
-  flex: 7;
+  flex: 5;
   font-size: 0.85rem;
 
   /* display: grid;
@@ -133,14 +159,23 @@ const Footer = ({ siteMetadata, location }) => {
     <>
       <StyledFooter>
         <OuterGrid>
-          <FooterLogo>
-            <img className="logo" src={cornellLogo} alt="Cornell Tech Logo" />
+          <FooterLogos>
+            <div class="footer-logo logo-ct">
+              <img
+                className="logo "
+                src={cornellLogo}
+                alt="Cornell Tech Logo"
+              />
+            </div>
+            <div class="footer-logo logo-uai">
+              <img className="logo" src={urbanaiLogo} alt="Cornell Tech Logo" />
+            </div>
             {/* <StaticImage
               className="logo"
               src="../assets/vertical-cornell-jacobs.svg"
               alt="Placeholder"
             /> */}
-          </FooterLogo>
+          </FooterLogos>
           <InnerGrid>
             <Row>
               <Column
