@@ -16,6 +16,8 @@ Yixuan Wang, Cornell Tech, Research Coordinator
 
 Ben Oldenburg, Oldenburg Design, Design
 
+Spencer Ames, Columbia Univeristy, Signals Reviewer
+
 ## Contact
 
 urbantech@cornell.edu
