@@ -14,9 +14,11 @@ Hubert Beroche, Urban AI, Principal Investigator
 
 Yixuan Wang, Cornell Tech, Research Coordinator
 
-Ben Oldenburg, Oldenburg Design, Design
+Flaminia Borelli, Urban AI, Research Coordinator
 
 Spencer Ames, Columbia Univeristy, Signals Reviewer
+
+Ben Oldenburg, Oldenburg Design, Design
 
 ## Contact
 
