@@ -15,8 +15,8 @@ export async function generateInsight(trend, settings) {
       },
       generator_settings: {
         insights_per_trend: 3,
-        insight_words: 100,
-        model: "gpt-3.5-turbo",
+        insight_words: 50,
+        model: "gpt-4o-mini",
         temperature: 0.7,
         top_p: 0.9,
         sector: "Transportation",
@@ -37,8 +37,8 @@ export async function generateInsight(trend, settings) {
       },
       generator_settings: {
         insights_per_trend: 3,
-        insight_words: 100,
-        model: "gpt-3.5-turbo",
+        insight_words: 50,
+        model: "gpt-4o-mini",
         temperature: 0.7,
         top_p: 0.9,
         sector: settings.sector,
