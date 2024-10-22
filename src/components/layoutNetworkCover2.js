@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Waypoint } from "react-waypoint";
 import { Link } from "gatsby";
 import cornellLogo from "../assets/vertical-jacobs-cornell-dark.svg";
+import urbanaiLogo from "../assets/URBAN-AI-Logo.png";
 import { above, below } from "../styles/utilities/breakpoints";
 import { NetworkBuild4 } from "./viz/networkBuild4-cover";
 
@@ -157,25 +158,43 @@ const IntroWrapper = styled.div`
   }
 `;
 
-const HeaderLogo = styled.div`
+const HeaderLogos = styled.div`
   position: absolute;
   right: 0;
   top: 20%;
-  .logo {
-    visibility: hidden;
-    width: 100px;
-    z-index: 4000;
-    opacity: 0;
-    transition: all 0.5s linear;
+
+  .logos {
+    padding: 10px;
     background-color: #fff;
+    z-index: 4000;
+    transition: all 0.5s linear;
+    opacity: 0;
+    visibility: hidden;
     &.cover-mode {
       visibility: visible;
       opacity: 1;
     }
+    text-align: center;
+    width: 110px;
+    ${below.md} {
+      width: 80px;
+    }
+  }
+
+  .logo-ct {
+    margin-bottom: 1.5rem;
+    .logo {
+      width: 75%;
+    }
+  }
+  .logo-uai .logo {
+    width: 100%;
+  }
+
+  .logo {
     ${below.md} {
       width: 70px;
     }
-    padding: 10px;
   }
   ${below.md} {
     top: 12%;
@@ -274,14 +293,35 @@ export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
               // nodeHandleSelection={nodeHandleSelection}
             />
           </NetworkWrapper>
-          <HeaderLogo>
+          {/* <HeaderLogo>
             <img
               id={"main-logo"}
               className={`logo ${selectedView === "cover" ? "cover-mode" : ""}`}
               src={cornellLogo}
               alt="Cornell Tech Logo"
             />
-          </HeaderLogo>
+          </HeaderLogo> */}
+
+          <HeaderLogos>
+            <div
+              className={`logos ${selectedView === "cover" ? "cover-mode" : ""}`}
+            >
+              <div class="header-logo logo-ct">
+                <img
+                  className="logo "
+                  src={cornellLogo}
+                  alt="Cornell Tech Logo"
+                />
+              </div>
+              <div class="header-logo logo-uai">
+                <img
+                  className="logo"
+                  src={urbanaiLogo}
+                  alt="Cornell Tech Logo"
+                />
+              </div>
+            </div>
+          </HeaderLogos>
         </div>
       </div>
       <div style={{ height: "100px" }}></div>
