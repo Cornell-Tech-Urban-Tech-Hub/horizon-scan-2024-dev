@@ -302,7 +302,7 @@ export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
             />
           </HeaderLogo> */}
 
-          <HeaderLogos>
+          {/* <HeaderLogos>
             <div
               className={`logos ${selectedView === "cover" ? "cover-mode" : ""}`}
             >
@@ -321,7 +321,7 @@ export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
                 />
               </div>
             </div>
-          </HeaderLogos>
+          </HeaderLogos> */}
         </div>
       </div>
       <div style={{ height: "100px" }}></div>
