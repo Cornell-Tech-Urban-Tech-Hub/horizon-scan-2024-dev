@@ -5,8 +5,9 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 // import { node } from "prop-types"
 
-import cornellLogo from "../assets/vertical-jacobs-cornell.svg";
-import urbanaiLogo from "../assets/URBAN-AI-Logo-Blanc.png";
+// import cornellLogo from "../assets/vertical-jacobs-cornell.svg";
+import cornellLogoHorizontal from "../assets/horizontal-jacobs-cornell.svg";
+import urbanaiLogo from "../assets/URBAN-AI-Logo-Blanc-02.png";
 import { above, below } from "../styles/utilities/breakpoints";
 
 const Row = styled.footer`
@@ -44,46 +45,32 @@ const Column = styled.div`
 `;
 
 const OuterGrid = styled.div`
-  display: flex;
+  /* display: flex; */
   /* display: grid;
   grid-template-columns: 1fr 7fr;
   gap: 2rem; */
 `;
 
 const FooterLogos = styled.div`
-  flex: 1;
   display: flex;
-  ${below.laptop} {
-    flex-direction: column;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  gap: 3rem;
+  ${below.md} {
+    grid-template-columns: 1fr 1fr;
   }
-  ${above.laptop} {
-    .footer-logo {
-      flex-grow: 1;
-    }
-    .logo-ct {
-      flex: 2;
-    }
-    .logo-uai {
-      flex: 3;
-    }
-  }
-  text-align: center;
-  padding-right: 1rem;
-  .footer-logo {
-  }
-  .logo-ct {
-    .logo {
-      width: 70%;
-      max-width: 85px;
-      margin-bottom: 1.5rem;
-    }
-  }
-  .logo-uai .logo {
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+`;
+
+const FooterLogo = styled.div`
+  display: inline-block;
+  display: flex;
+
+  .logo {
+    max-height: 80px;
     width: 100%;
-    max-width: 110px;
-  }
-  img {
-    margin-right: 10%;
+    max-width: 200px;
+    align-self: center;
   }
 `;
 
@@ -160,21 +147,16 @@ const Footer = ({ siteMetadata, location }) => {
       <StyledFooter>
         <OuterGrid>
           <FooterLogos>
-            <div class="footer-logo logo-ct">
+            <FooterLogo>
               <img
-                className="logo "
-                src={cornellLogo}
+                className="logo"
+                src={cornellLogoHorizontal}
                 alt="Cornell Tech Logo"
               />
-            </div>
-            <div class="footer-logo logo-uai">
+            </FooterLogo>
+            <FooterLogo>
               <img className="logo" src={urbanaiLogo} alt="Cornell Tech Logo" />
-            </div>
-            {/* <StaticImage
-              className="logo"
-              src="../assets/vertical-cornell-jacobs.svg"
-              alt="Placeholder"
-            /> */}
+            </FooterLogo>
           </FooterLogos>
           <InnerGrid>
             <Row>
