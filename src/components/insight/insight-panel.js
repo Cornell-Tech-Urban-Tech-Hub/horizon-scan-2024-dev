@@ -264,3 +264,43 @@ export const InsightCard = ({ result }) => {
     </StyledInsightCard>
   );
 };
+
+export const InsightCardSynthesis = ({ result, showMeta = false }) => {
+  let trend = result.settings.body.trend;
+  let settings = result.settings.body.generator_settings;
+
+  return (
+    <StyledInsightCard>
+      <div className="insight-set">
+        <Row>
+          {result.insights?.map((insight, i) => (
+            <Col>
+              <div className="insight">
+                <h3>{insight.title}</h3>
+                <div className="insight-inner">
+                  <p>{insight.synthesis}</p>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
+        {showMeta && (
+          <div className="meta">
+            <Col>
+              Request ({result.id}): {result.timestamp}
+              {/* / Time: {result.time} */}
+              <div>
+                Trend: <strong>{trend.title}</strong>
+              </div>
+              <div>
+                Sector: <strong>{settings.sector}</strong> / Occupation:{" "}
+                <strong>{settings.occupation}</strong> / Time frame:{" "}
+                <strong>{settings.time_frame}</strong>
+              </div>
+            </Col>
+          </div>
+        )}
+      </div>
+    </StyledInsightCard>
+  );
+};
