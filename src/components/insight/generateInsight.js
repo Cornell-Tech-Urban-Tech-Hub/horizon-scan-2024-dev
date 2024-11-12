@@ -51,7 +51,7 @@ export async function generateInsight(trend, settings) {
   console.log(JSON.stringify(request_json));
   result.settings = request_json;
 
-  return await fetch(process.env.GATSBY_INSIGHT_GENERATOR_ENDPOINT, {
+  return await fetch(process.env.GATSBY_INSIGHT_GENERATOR_ENDPOINT_v2, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
