@@ -11,6 +11,7 @@ import styled from "styled-components";
 // import { summarizeNodeTaxonomy } from "../components/viz/dataUtilities"
 import { Section, SectionCrop, Content } from "../styles/StyledElements";
 import { below } from "../styles/utilities/breakpoints";
+import { IncomingSignals } from "../components/incomingSignals";
 
 import { contentMapMarkdown } from "../components/pageUtilities";
 import { SectionCardsLeft } from "../components/cardLayout";
@@ -80,8 +81,9 @@ export default function Landing({ location, data }) {
   //let dataset = processFullNetwork(data.forecasts.nodes);
   let dataset = processFullNetwork(data.forecasts.nodes);
 
-  // console.log("dataset")
-  // console.log(dataset)
+  // console.log("dataset");
+  // console.log(dataset);
+  console.log(data);
 
   return (
     <Layout>
@@ -101,6 +103,7 @@ export default function Landing({ location, data }) {
         heading={markdownMap.get("description-forecasts")?.frontmatter.title}
         description={markdownMap.get("description-forecasts")}
       />
+      <IncomingSignals signals={data.incoming.nodes} />
     </Layout>
   );
 }
@@ -140,6 +143,19 @@ export const query = graphql`
                   Visibility
                   Sector
                   Tags
+                }
+              }
+              NodeImage: Image {
+                localFiles {
+                  childImageSharp {
+                    gatsbyImageData(
+                      height: 100
+                      width: 100
+                      quality: 100
+                      layout: CONSTRAINED
+                      placeholder: BLURRED
+                    )
+                  }
                 }
               }
             }
@@ -205,6 +221,23 @@ export const query = graphql`
           Visibility
           Sector
           Tags
+        }
+      }
+    }
+    incoming: allAirtable(
+      filter: {
+        table: { eq: "Signals" }
+        data: { Visibility: { eq: "Screened" } }
+      }
+      sort: { data: { Created: ASC } }
+    ) {
+      nodes {
+        recordId
+        data {
+          Name
+          Visibility
+          Created
+          Signal_Source_URL
         }
       }
     }
