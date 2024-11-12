@@ -83,7 +83,7 @@ export default function Landing({ location, data }) {
 
   // console.log("dataset");
   // console.log(dataset);
-  console.log(data);
+  // console.log(data);
 
   return (
     <Layout>
