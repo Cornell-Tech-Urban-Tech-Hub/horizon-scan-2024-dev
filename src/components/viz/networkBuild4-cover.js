@@ -250,7 +250,7 @@ export function NetworkBuild4({
 
     var defs = svg.append("defs");
 
-    console.log(imageNodes);
+    // console.log(imageNodes);
 
     var pattern = defs
       .selectAll("pattern")
