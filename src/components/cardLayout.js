@@ -105,7 +105,7 @@ export const CardsExpandable = ({ nodes, expanded = false, type }) => {
               <CardTrend2 node={node} expanded={isExpanded} />
             )}
             {type === "signal" && (
-              <CardSignal3 node={node} expanded={isExpanded} />
+              <CardSignal2 node={node} expanded={isExpanded} />
             )}
           </ColCard>
         ))}
