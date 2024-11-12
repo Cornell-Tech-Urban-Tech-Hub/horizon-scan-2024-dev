@@ -294,6 +294,9 @@ export function processFullNetwork(data) {
             sectorsArray,
             tags,
             tagsArray,
+            nodeImage:
+              d.data.NodeImage?.localFiles[0].childImageSharp.gatsbyImageData
+                .images.fallback.src,
           };
           forecastNodes.push({ node });
           if (!nodeIds.includes(d.recordId)) {
