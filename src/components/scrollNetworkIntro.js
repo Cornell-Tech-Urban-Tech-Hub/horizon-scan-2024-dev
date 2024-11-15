@@ -266,7 +266,15 @@ export const ScrollNetworkIntro = ({ data, markdownMap }) => {
             />
           </div>
           <div className="scroller">
-            <div style={{ height: "300px" }}></div>
+            <blockquote className={"statement"}>
+              <p>
+                <span>
+                  What's a <br />
+                  horizon scan?
+                </span>
+              </p>
+            </blockquote>
+            <div style={{ height: "50px" }}></div>
             <WaypointStep
               step={"network"}
               stepUpdate={stepUpdate}
