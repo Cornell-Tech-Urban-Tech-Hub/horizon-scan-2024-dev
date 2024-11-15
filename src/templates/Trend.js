@@ -122,7 +122,8 @@ export default function Trend({ data: { node, markdown } }) {
         <Content>
           <Row>
             <Col>
-              <h3>{labelSet.trends.metadata_section_heading}</h3>
+              {/* <h3>{labelSet.trends.metadata_section_heading}</h3> */}
+              <h3>Trend Profile</h3>
             </Col>
           </Row>
           <Row>
