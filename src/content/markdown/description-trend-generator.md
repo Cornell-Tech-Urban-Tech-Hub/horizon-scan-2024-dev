@@ -4,4 +4,4 @@ section: descriptions
 ref: description-trend-generator
 ---
 
-Add short help text to explaine what this is and what to do.
+How might this trend shape your future? Generate a set of personalized insights to explore challenges, opportunities, and potential innovations. Simply select a sector, occupation, and target year — then press the button and let our AI do the work.
