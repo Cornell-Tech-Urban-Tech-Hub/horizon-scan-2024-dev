@@ -128,9 +128,9 @@ export function NetworkBuild4({
   };
 
   const nodeBaseRadius = {
-    forecast: 36,
-    trend: 12,
-    signal: 6,
+    forecast: 48,
+    trend: 16,
+    signal: 8,
   };
 
   const colorSet = {
