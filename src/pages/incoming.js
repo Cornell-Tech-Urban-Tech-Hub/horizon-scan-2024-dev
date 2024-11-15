@@ -14,6 +14,7 @@ import {
 } from "../styles/StyledElements";
 import { SourceLink } from "../components/sourceLink";
 import getHostName from "../utilities/getHostName";
+import { IncomingSignalsGrid } from "../components/incomingSignals";
 
 const { slugFormat } = require("../utilities/slugFormat");
 
@@ -56,7 +57,8 @@ export default function Incoming({ data, location }) {
       </Section>
       <Section>
         <Content>
-          <IncomingList data={data} />
+          <IncomingSignalsGrid nodes={data.signals.nodes} />
+          {/* <IncomingList data={data} /> */}
         </Content>
       </Section>
     </Layout>
