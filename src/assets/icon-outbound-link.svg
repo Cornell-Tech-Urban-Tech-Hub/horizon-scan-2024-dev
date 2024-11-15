@@ -1,0 +1,15 @@
+<svg id="Layer_6" data-name="Layer 6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .icon-stroke {
+        fill: none;
+        stroke: #999999;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <polyline class="icon-stroke" points="31 3 45 3 45 17"/>
+  <polyline class="icon-stroke" points="39 23 39 45 3 45 3 9 25 9"/>
+  <line class="icon-stroke" x1="45" y1="3" x2="21" y2="27"/>
+</svg>
