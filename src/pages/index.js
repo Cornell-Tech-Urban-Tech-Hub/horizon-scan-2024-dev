@@ -11,7 +11,7 @@ import styled from "styled-components";
 // import { summarizeNodeTaxonomy } from "../components/viz/dataUtilities"
 import { Section, SectionCrop, Content } from "../styles/StyledElements";
 import { below } from "../styles/utilities/breakpoints";
-import { IncomingSignals } from "../components/incomingSignals";
+import { IncomingSignalsSection } from "../components/incomingSignals";
 
 import { contentMapMarkdown } from "../components/pageUtilities";
 import { SectionCardsLeft } from "../components/cardLayout";
@@ -103,7 +103,13 @@ export default function Landing({ location, data }) {
         heading={markdownMap.get("description-forecasts")?.frontmatter.title}
         description={markdownMap.get("description-forecasts")}
       />
-      <IncomingSignals signals={data.incoming.nodes} />
+      <IncomingSignalsSection
+        signals={data.incoming.nodes}
+        heading={
+          markdownMap.get("description-incoming-signals")?.frontmatter.title
+        }
+        description={markdownMap.get("description-incoming-signals")}
+      />
     </Layout>
   );
 }
