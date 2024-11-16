@@ -241,6 +241,9 @@ export const InsightCard = ({ result }) => {
                   <p>
                     <strong>Opportunities:</strong> {insight.opportunities}
                   </p>
+                  <p>
+                    <strong>Synthesis:</strong> {insight.synthesis}
+                  </p>
                 </div>
               </div>
             </Col>
