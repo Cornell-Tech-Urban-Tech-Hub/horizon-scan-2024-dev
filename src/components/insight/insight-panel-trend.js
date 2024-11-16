@@ -19,7 +19,6 @@ const OptionsPanel = styled.div`
   padding: 1rem;
   border-radius: 0.5rem;
   //background: #efefef;
-  background: #ffffff;
   background-color: ${(props) => lighten(0.5, props.theme.colors.primary)};
   h3 {
     margin: 0;
@@ -42,11 +41,21 @@ const OptionsPanel = styled.div`
 `;
 
 const ResultsPanel = styled.div`
+  position: relative;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
-  background: #efefef;
   padding: 1rem;
   border: 1px solid #ccc;
+  h3 {
+    position: absolute;
+    top: -36px;
+    left: 2rem;
+    background-color: #efefef;
+    box-shadow:
+      0.5rem 0 0 #efefef,
+      -0.5rem 0 0 #efefef;
+  }
 `;
 
 const StyledInsightResult = styled.div`
@@ -289,11 +298,7 @@ export const InsightPanel = ({ trend, title, html }) => {
             )}
             {!loading && insights.length > 0 && (
               <ResultsPanel>
-                <Row>
-                  <Col>
-                    <h3>Insights</h3>
-                  </Col>
-                </Row>
+                <h3>Generated Insights</h3>
                 <InsightResult key={1} result={insights[0]} showMeta={true} />
               </ResultsPanel>
             )}
@@ -321,12 +326,12 @@ export const InsightResult = ({ result, showMeta = false }) => {
     <StyledInsightResult>
       <div className="insight-set">
         {result.insights?.map((insight, i) => (
-          <InsightCard insight={insight}>
+          <InsightCardSynthesis insight={insight}>
             <h4>{insight.title}</h4>
             <div className="insight-inner">
               <p>{insight.synthesis}</p>
             </div>
-          </InsightCard>
+          </InsightCardSynthesis>
         ))}
       </div>
       {showMeta && (
@@ -349,7 +354,7 @@ export const InsightResult = ({ result, showMeta = false }) => {
   );
 };
 
-export const InsightCard = ({ insight }) => {
+export const InsightCardSynthesis = ({ insight }) => {
   return (
     <StyledInsightCard>
       <div className="insight-header">
@@ -359,6 +364,33 @@ export const InsightCard = ({ insight }) => {
       </div>
       <div className="insight-inner">
         <p>{insight.synthesis}</p>
+      </div>
+    </StyledInsightCard>
+  );
+};
+
+export const InsightCardFull = ({ insight }) => {
+  return (
+    <StyledInsightCard>
+      <div className="insight-header">
+        <h4>
+          <span>{insight.title}</span>
+        </h4>
+      </div>
+      <div className="insight-inner">
+        <p>
+          <strong>Challenges:</strong> {insight.challenges}
+        </p>
+        <p>
+          <strong>Innovative Applications:</strong>{" "}
+          {insight.innovative_applications}
+        </p>
+        <p>
+          <strong>Opportunities:</strong> {insight.opportunities}
+        </p>
+        <p>
+          <strong>Synthesis:</strong> {insight.synthesis}
+        </p>
       </div>
     </StyledInsightCard>
   );
