@@ -128,9 +128,9 @@ export function NetworkBuild4({
   };
 
   const nodeBaseRadius = {
-    forecast: 36,
-    trend: 12,
-    signal: 6,
+    forecast: 48,
+    trend: 16,
+    signal: 8,
   };
 
   const colorSet = {
@@ -153,6 +153,9 @@ export function NetworkBuild4({
   let nodes = nodesData.map((d) => Object.assign({}, d));
 
   let forecasts = nodes.filter((d) => d.type === "forecast");
+  let imageNodes = nodes.filter(
+    (d) => d.type === "forecast" || d.type === "trend"
+  );
 
   // console.log("nodes");
   // console.log(forecasts);
@@ -247,9 +250,11 @@ export function NetworkBuild4({
 
     var defs = svg.append("defs");
 
+    // console.log(imageNodes);
+
     var pattern = defs
       .selectAll("pattern")
-      .data(forecasts)
+      .data(imageNodes)
       .join("pattern")
       .attr("id", function (d) {
         return "image-" + d.id;
@@ -260,8 +265,12 @@ export function NetworkBuild4({
       .attr("xlink:href", function (d) {
         return d.nodeImage;
       })
-      .attr("width", nodeBaseRadius.forecast * 2)
-      .attr("height", nodeBaseRadius.forecast * 2);
+      .attr("width", function (d) {
+        return nodeBaseRadius[d.type] * 2;
+      })
+      .attr("height", function (d) {
+        return nodeBaseRadius[d.type] * 2;
+      });
 
     updateVisibility();
 
@@ -357,7 +366,7 @@ export function NetworkBuild4({
               return d.radius;
             })
             .attr("fill", (d) => {
-              if (nodeImages && d.type === "forecast") {
+              if (nodeImages && (d.type === "forecast" || d.type === "trend")) {
                 if (d.nodeImage) {
                   return `url(#image-${d.id})`;
                 } else {
@@ -775,7 +784,7 @@ export function NetworkBuild4({
           } else {
             c = colorSet[d.type];
           }
-          if (nodeImages && d.type === "forecast") {
+          if (nodeImages && (d.type === "forecast" || d.type === "trend")) {
             if (d.nodeImage) {
               c = `url(#image-${d.id})`;
             } else {
@@ -817,7 +826,7 @@ export function NetworkBuild4({
           } else {
             c = colorSet[d.type];
           }
-          if (nodeImages && d.type === "forecast") {
+          if (nodeImages && (d.type === "forecast" || d.type === "trend")) {
             if (d.nodeImage) {
               c = `url(#image-${d.id})`;
             } else {

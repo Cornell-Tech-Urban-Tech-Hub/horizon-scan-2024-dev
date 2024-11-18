@@ -64,18 +64,13 @@ export default function Introduction({ data, location }) {
         </ImageGrid>
       </Section> */}
       <SectionMeta>
-        <Content>
+        {/* <Content>
           <Row>
             <Col>
-              <blockquote className={"statement"}>
-                <p>
-                  <span>What's a horizon scan?</span>
-                </p>
-              </blockquote>
-              <h2></h2>
+              <h2>What's a horizon scan?</h2>
             </Col>
           </Row>
-        </Content>
+        </Content> */}
         <Content>
           <ScrollNetworkIntro data={data} markdownMap={markdownMap} />
         </Content>

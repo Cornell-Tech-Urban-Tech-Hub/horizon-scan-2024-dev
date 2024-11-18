@@ -38,19 +38,19 @@ export default function Signal({ data: { node } }) {
         <Content>
           <Row>
             <Col size={2}>
-              {/* {node.data.Description && (
+              {node.data.Description && (
                 <div
                   dangerouslySetInnerHTML={{
                     __html: node.data.Description.childMarkdownRemark.html,
                   }}
                 />
-              )} */}
+              )}
 
-              <p className="content-note">
+              {/* <p className="content-note">
                 {
                   "Signal descriptions are being reviewed and will be published at a future date"
                 }
-              </p>
+              </p> */}
 
               {/* {url && (
                 <div>
@@ -88,12 +88,12 @@ export const query = graphql`
       id
       data {
         Name
-        # Description {
-        #   childMarkdownRemark {
-        #     rawMarkdownBody
-        #     html
-        #   }
-        # }
+        Description {
+          childMarkdownRemark {
+            rawMarkdownBody
+            html
+          }
+        }
         Sector
         Tags
         Signal_Source_URL

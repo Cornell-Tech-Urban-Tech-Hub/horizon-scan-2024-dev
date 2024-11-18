@@ -16,11 +16,21 @@ import { IncomingSignalsSection } from "../components/incomingSignals";
 import { contentMapMarkdown } from "../components/pageUtilities";
 import { SectionCardsLeft } from "../components/cardLayout";
 
-import { LayoutNetworkCover } from "../components/layoutNetworkCover2";
+import { LayoutCover } from "../components/layoutCover3";
+import { NetworkBuild4 } from "../components/viz/networkBuild4-cover";
 
 const NetworkWrapper = styled.div`
   position: relative;
   z-index: 1;
+
+  svg {
+    transform: scale(1);
+    transition: transform 2s;
+    width: 100%; // Was breaking IE display
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      width: auto;
+    }
+  }
 `;
 const IntroWrapper = styled.div`
   position: relative;
@@ -88,21 +98,45 @@ export default function Landing({ location, data }) {
   return (
     <Layout>
       <Seo />
-      <SectionCrop>
-        <Content>
-          <LayoutNetworkCover
-            site={data.site}
-            dataset={dataset}
-            mdNode={mdNode}
-          />
-        </Content>
-      </SectionCrop>
+
+      <LayoutCover site={data.site} dataset={dataset} mdNode={mdNode} />
+
       <SectionCardsLeft
         nodes={data.forecasts.nodes}
         type={"forecast"}
         heading={markdownMap.get("description-forecasts")?.frontmatter.title}
         description={markdownMap.get("description-forecasts")}
       />
+      <Section>
+        <Content>
+          <NetworkWrapper>
+            <NetworkBuild4
+              vizId={"networkViz"}
+              visContext={"explorer"}
+              scaling={false}
+              height={700}
+              linksData={dataset.links}
+              nodesData={dataset.nodes}
+              colorForecast={true}
+              introTransition={true}
+              nodeImages={true}
+              // linksData={selectedLinks}
+              // nodesData={selectedNodes}
+              // highlighting={highlighting}
+              // selectedNodeIds={selectedNodeIds}
+              // selectedLayout={selectionLayout.value}
+              // selectedX={selectedX}
+              // selectedY={selectedY}
+              // selectedS={selectedS}
+              // selectedView={selectedView}
+              // nodeHighlight={selectedSector}
+              // nodeHoverTooltip={nodeHoverTooltip}
+              // nodeSelection={nodeSelection}
+              // nodeHandleSelection={nodeHandleSelection}
+            />
+          </NetworkWrapper>
+        </Content>
+      </Section>
       <IncomingSignalsSection
         signals={data.incoming.nodes}
         heading={

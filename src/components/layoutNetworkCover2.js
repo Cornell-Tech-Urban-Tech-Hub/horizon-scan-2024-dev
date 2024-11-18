@@ -52,7 +52,7 @@ const WaypointWrapper = styled.div`
 
 const NetworkWrapper = styled.div`
   svg {
-    transform: scale(1.4);
+    transform: scale(1);
     transition: transform 2s;
     width: 100%; // Was breaking IE display
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -61,7 +61,7 @@ const NetworkWrapper = styled.div`
   }
 
   &.cover-mode svg {
-    transform: scale(2.2);
+    transform: scale(1.8);
     pointer-events: none;
   }
 `;

@@ -23,6 +23,9 @@ import { NetworkTagListFilter } from "../components/viz/networkTagListFilter";
 import { contentMapMarkdown } from "../components/pageUtilities";
 import { SectionCardsLeft } from "../components/cardLayout";
 
+import { InsightPanel } from "../components/insight/insight-panel-trend";
+import { lighten } from "polished";
+
 const labelSet = require("../content/labels");
 
 const PageHeader = styled.header``;
@@ -31,6 +34,13 @@ const ChartWrapper = styled.div`
   h4 {
     margin-top: 1rem;
   }
+`;
+
+const SectionGenerator = styled.div`
+  border-top: 1px solid #333;
+  background-color: #efefef;
+
+  padding-bottom: 2rem;
 `;
 
 export default function Trend({ data: { node, markdown } }) {
@@ -91,6 +101,17 @@ export default function Trend({ data: { node, markdown } }) {
           </Row>
         </Content>
       </Section>
+
+      <SectionGenerator>
+        <InsightPanel
+          title={
+            markdownMap.get("description-trend-generator")?.frontmatter.title
+          }
+          html={markdownMap.get("description-trend-generator")?.html}
+          trend={node}
+        />
+      </SectionGenerator>
+
       <SectionCardsLeft
         nodes={node.data.Signals}
         type={"signal"}
@@ -101,7 +122,8 @@ export default function Trend({ data: { node, markdown } }) {
         <Content>
           <Row>
             <Col>
-              <h3>{labelSet.trends.metadata_section_heading}</h3>
+              {/* <h3>{labelSet.trends.metadata_section_heading}</h3> */}
+              <h3>Trend Profile</h3>
             </Col>
           </Row>
           <Row>
@@ -175,12 +197,12 @@ export const query = graphql`
           data {
             Name
             Visibility
-            # Description {
-            #   childMarkdownRemark {
-            #     rawMarkdownBody
-            #     html
-            #   }
-            # }
+            Description {
+              childMarkdownRemark {
+                rawMarkdownBody
+                html
+              }
+            }
             Signal_Source_URL
             Sector
             Tags

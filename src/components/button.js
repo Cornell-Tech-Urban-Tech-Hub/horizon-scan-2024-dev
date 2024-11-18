@@ -20,12 +20,12 @@ const StyledButton = styled.button`
     cursor: pointer;
     outline: none;
   }
-  svg {
+  /* svg {
     height: 1rem;
     width: 1rem;
     margin-right: 0.3rem;
     margin-bottom: -0.175rem;
-  }
+  } */
 `;
 
 const StyledButtonGenerator = styled.button`
@@ -47,12 +47,12 @@ const StyledButtonGenerator = styled.button`
     
     background-color: ${({ theme }) => lighten(0.1, theme.colors.primary)};};
   }
-  svg {
+  /* svg {
     height: 1rem;
     width: 1rem;
     margin-right: 0.3rem;
     margin-bottom: -0.175rem;
-  }
+  } */
 `;
 
 const StyledButtonToggleMore = styled(StyledButton)`
