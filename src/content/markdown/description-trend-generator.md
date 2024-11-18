@@ -1,5 +1,5 @@
 ---
-title: Insight Generator
+title: Personalized Insights
 section: descriptions
 ref: description-trend-generator
 ---
