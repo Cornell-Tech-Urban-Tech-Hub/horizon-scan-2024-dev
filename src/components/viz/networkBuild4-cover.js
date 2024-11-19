@@ -247,6 +247,15 @@ export function NetworkBuild4({
     // }
 
     // console.log("DEFS");
+    var background = svg
+      .append("circle")
+      .attr("class", "background")
+      .attr("stroke", "none")
+      .attr("fill", "#fff")
+      .attr("cx", width / 2)
+      .attr("cy", height / 2)
+      .attr("stroke-width", 2)
+      .attr("r", Math.min(width, height) * 0.35);
 
     var defs = svg.append("defs");
 
@@ -294,7 +303,7 @@ export function NetworkBuild4({
           .strength(0.1)
       )
       .force("charge", d3.forceManyBody().strength(-12))
-      // .force("center", d3.forceCenter(innerWidth / 2, innerHeight / 2))
+      .force("center", d3.forceCenter(innerWidth / 2, innerHeight / 2))
       .force("x", d3.forceX())
       .force("y", d3.forceY())
       .on("tick", tick);
