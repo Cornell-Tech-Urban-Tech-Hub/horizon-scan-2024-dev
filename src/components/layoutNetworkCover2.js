@@ -31,7 +31,7 @@ const WaypointWrapper = styled.div`
   }
 
   .scroller {
-    flex-basis: 35%;
+    flex-basis: 38%;
     z-index: 100;
     pointer-events: none;
     ${below.md} {
