@@ -16,7 +16,7 @@ import { IncomingSignalsSection } from "../components/incomingSignals";
 import { contentMapMarkdown } from "../components/pageUtilities";
 import { SectionCardsLeft } from "../components/cardLayout";
 
-import { LayoutNetworkCover } from "../components/layoutNetworkCover2";
+import { LayoutCover } from "../components/layoutCover4";
 
 const NetworkWrapper = styled.div`
   position: relative;
@@ -87,16 +87,16 @@ export default function Landing({ location, data }) {
 
   return (
     <Layout>
-      <Seo />
-      <SectionCrop>
+      <Seo /> <LayoutCover site={data.site} dataset={dataset} mdNode={mdNode} />
+      {/* <SectionCrop>
         <Content>
-          <LayoutNetworkCover
+          <LayoutCover
             site={data.site}
             dataset={dataset}
             mdNode={mdNode}
           />
         </Content>
-      </SectionCrop>
+      </SectionCrop> */}
       <SectionCardsLeft
         nodes={data.forecasts.nodes}
         type={"forecast"}
