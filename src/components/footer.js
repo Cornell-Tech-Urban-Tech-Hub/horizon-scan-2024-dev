@@ -67,10 +67,17 @@ const FooterLogo = styled.div`
   display: flex;
 
   .logo {
-    max-height: 80px;
     width: 100%;
     max-width: 200px;
     align-self: center;
+  }
+
+  .logo-jacobs {
+    height: 80px;
+  }
+
+  .logo-urban-ai {
+    max-height: 80px;
   }
 `;
 
@@ -149,13 +156,17 @@ const Footer = ({ siteMetadata, location }) => {
           <FooterLogos>
             <FooterLogo>
               <img
-                className="logo"
+                className="logo logo-jacobs"
                 src={cornellLogoHorizontal}
                 alt="Cornell Tech Logo"
               />
             </FooterLogo>
             <FooterLogo>
-              <img className="logo" src={urbanaiLogo} alt="Cornell Tech Logo" />
+              <img
+                className="logo logo-urban-ai"
+                src={urbanaiLogo}
+                alt="Cornell Tech Logo"
+              />
             </FooterLogo>
           </FooterLogos>
           <InnerGrid>
