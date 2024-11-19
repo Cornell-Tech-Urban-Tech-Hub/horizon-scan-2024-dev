@@ -16,7 +16,7 @@ import {
 const SectionIntro = styled.div`
   background: linear-gradient(
     0deg,
-    rgba(48, 153, 117, 0.15) 0%,
+    rgba(48, 153, 117, 0.2) 0%,
     rgba(48, 153, 117, 0) 100%
   );
   padding-bottom: 1rem;
