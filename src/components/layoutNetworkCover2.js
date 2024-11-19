@@ -239,8 +239,8 @@ export const LayoutNetworkCover = ({ site, dataset, mdNode }) => {
                   <span>{site.siteMetadata?.title}</span>
                 </h1>
                 <div className="subtitle">{site.siteMetadata?.subtitle}</div>
-                <br />
-                <div className="preview">{"A Preview"}</div>
+                {/* <br />
+                <div className="preview">{"A Preview"}</div> */}
               </div>
             </IntroWrapper>
           </WaypointStep>
