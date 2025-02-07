@@ -12,7 +12,7 @@ module.exports = {
   // seoTitleSuffix: "Portfolio Minimal", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
   useCookieBar: false, // If you use Google Analytics and want to be GDPR-compliant, set it to true
   // googleAnalyticsTrackingId: "G-BBKN5BX852", // e.g. UA-XXXXXX-X
-
+  insightGeneratorActive: true,
   //-- NAVIGATION SETTINGS -----
   // navLinks: {
   //   footerLinks: [
