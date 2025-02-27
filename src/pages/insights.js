@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
+import { insightGeneratorActive } from "../../config";
 // import { NetworkBuildLanding } from "../components/viz/networkBuildLanding"
 import { processNetwork3 } from "../components/viz/processNetworkV4";
 import styled from "styled-components";
@@ -122,10 +123,15 @@ export default function Landing({ location, data }) {
           </Row>
           <Row>
             <Col>
-              <InsightPanel
-                trend={selectedTrendNode}
-                optionsSector={optionsSector}
-              ></InsightPanel>
+              {insightGeneratorActive && (
+                <InsightPanel
+                  trend={selectedTrendNode}
+                  optionsSector={optionsSector}
+                ></InsightPanel>
+              )}
+              {!insightGeneratorActive && (
+                <p>Insight Generator Not Currenly Active</p>
+              )}
             </Col>
           </Row>
         </Content>

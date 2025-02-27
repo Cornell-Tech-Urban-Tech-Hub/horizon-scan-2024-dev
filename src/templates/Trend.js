@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import { insightGeneratorActive } from "../../config";
 
 import Seo from "../components/seo";
 import Layout from "../components/layout";
@@ -102,15 +103,17 @@ export default function Trend({ data: { node, markdown } }) {
         </Content>
       </Section>
 
-      <SectionGenerator>
-        <InsightPanel
-          title={
-            markdownMap.get("description-trend-generator")?.frontmatter.title
-          }
-          html={markdownMap.get("description-trend-generator")?.html}
-          trend={node}
-        />
-      </SectionGenerator>
+      {insightGeneratorActive && (
+        <SectionGenerator>
+          <InsightPanel
+            title={
+              markdownMap.get("description-trend-generator")?.frontmatter.title
+            }
+            html={markdownMap.get("description-trend-generator")?.html}
+            trend={node}
+          />
+        </SectionGenerator>
+      )}
 
       <SectionCardsLeft
         nodes={node.data.Signals}
