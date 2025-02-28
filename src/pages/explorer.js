@@ -425,7 +425,7 @@ export const query = graphql`
       # filter: { table: { eq: "Signals" }, data: { Published: { eq: true } } }
       filter: {
         table: { eq: "Signals" }
-        # data: { Visibility: { eq: "Published" } }
+        data: { Visibility: { eq: "Published" } }
       }
     ) {
       nodes {
