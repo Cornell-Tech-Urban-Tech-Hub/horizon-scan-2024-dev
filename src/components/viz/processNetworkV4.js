@@ -1,7 +1,7 @@
 import forecastClass from "../../utilities/forecastClass";
 import { summarizeNodeTaxonomy } from "./dataUtilities";
 import * as d3 from "d3";
-const devMode = true;
+const devMode = false;
 
 export function processNetwork3(data, type) {
   let nodes = [];
@@ -81,16 +81,18 @@ export function processNetwork3(data, type) {
   });
 
   data.signals.nodes.forEach((d) => {
-    lookup.set(d.recordId, d);
-    nodes.push({
-      type: "signal",
-      id: d.recordId,
-      name: d.data.Name,
-      radius: 6,
-      sectorsArray: d.data.Sector,
-      tagsArray: d.data.Tags,
-      // complete: d.data.Name,
-    });
+    if (d.data.Visibility === "Published" || devMode) {
+      lookup.set(d.recordId, d);
+      nodes.push({
+        type: "signal",
+        id: d.recordId,
+        name: d.data.Name,
+        radius: 6,
+        sectorsArray: d.data.Sector,
+        tagsArray: d.data.Tags,
+        // complete: d.data.Name,
+      });
+    }
   });
 
   sectorSet = sectorSet
@@ -169,22 +171,24 @@ export function processForecastNetwork(forecast) {
       });
       if (d.data.Signals) {
         d.data.Signals.forEach((f) => {
-          if (!nodeIds.includes(f.recordId)) {
-            nodes.push({
-              type: "signal",
-              id: f.recordId,
-              name: f.data.Name,
-              radius: 6,
-              sectorsArray: f.data.Sector,
-              tagsArray: f.data.Tags,
+          if (f.data.Visibility === "Published" || devMode) {
+            if (!nodeIds.includes(f.recordId)) {
+              nodes.push({
+                type: "signal",
+                id: f.recordId,
+                name: f.data.Name,
+                radius: 6,
+                sectorsArray: f.data.Sector,
+                tagsArray: f.data.Tags,
+              });
+              nodeIds.push(f.recordId);
+            }
+            links.push({
+              type: "trend-signal",
+              source: d.recordId,
+              target: f.recordId,
             });
-            nodeIds.push(f.recordId);
           }
-          links.push({
-            type: "trend-signal",
-            source: d.recordId,
-            target: f.recordId,
-          });
         });
       }
     });
@@ -227,19 +231,21 @@ export function processTrendNetwork(d) {
   });
   if (d.data.Signals) {
     d.data.Signals.map((f) => {
-      nodes.push({
-        type: "signal",
-        id: f.recordId,
-        name: f.data.Name,
-        radius: 6,
-        sectorsArray: f.data.Sector,
-        tagsArray: f.data.Tags,
-      });
-      links.push({
-        type: "trend-signal",
-        source: d.recordId,
-        target: f.recordId,
-      });
+      if (f.data.Visibility === "Published" || devMode) {
+        nodes.push({
+          type: "signal",
+          id: f.recordId,
+          name: f.data.Name,
+          radius: 6,
+          sectorsArray: f.data.Sector,
+          tagsArray: f.data.Tags,
+        });
+        links.push({
+          type: "trend-signal",
+          source: d.recordId,
+          target: f.recordId,
+        });
+      }
     });
   }
 

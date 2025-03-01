@@ -116,7 +116,9 @@ export default function Trend({ data: { node, markdown } }) {
       )}
 
       <SectionCardsLeft
-        nodes={node.data.Signals}
+        nodes={node.data.Signals.filter(
+          (d) => d.data.Visibility === "Published"
+        )}
         type={"signal"}
         heading={markdownMap.get("description-signals")?.frontmatter.title}
         description={markdownMap.get("description-signals")}

@@ -201,6 +201,7 @@ export const query = graphql`
                 Name
                 Sector
                 Tags
+                Visibility
                 # Sector_linked
               }
             }
